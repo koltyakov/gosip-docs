@@ -9,7 +9,6 @@ Currently is legacy but was a popular way of exposing SharePoint into external w
 ### Struct
 
 ```go
-// AuthCnfg - FBA/TMG auth config structure
 type AuthCnfg struct {
     // SPSite or SPWeb URL, which is the context target for the API calls
     SiteURL string `json:"siteUrl"`
