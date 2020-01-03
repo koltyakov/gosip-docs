@@ -17,12 +17,12 @@ description: >-
 * Simplified API consumption \(REST, CSOM, SOAP\).
 * SharePoint-aware embedded features \(retries, header presets, error handling\).
 
-### Supported SharePoint versions:
+### Supported SharePoint versions
 
 * SharePoint Online \(SPO\)
 * On-Premises \(2019/2016/2013\)
 
-### Authentication strategies:
+### Authentication strategies
 
 * SharePoint On-Premises 2019/2016/2013:
   * User credentials \(NTLM\)
@@ -234,122 +234,6 @@ if err != nil {
 ```
 
 SPClient has `Execute` method which is a wrapper function injecting SharePoint authentication and ending up calling http.Client's `Do` method.
-
-## Authentication strategies
-
-Auth strategy should be selected correspondin to your SharePoint environment and its configuration.
-
-Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{strategy}` stands for a strategy auth package.
-
-| `/{strategy}` | SPO | On-Prem | Credentials sample\(s\) |
-| :--- | :--- | :--- | :--- |
-| `/saml` | ✅ | ❌ | [sample](config/samples/private.spo-user.json) |
-| `/addin` | ✅ | ❌ | [sample](config/samples/private.spo-addin.json) |
-| `/ntlm` | ❌ | ✅ | [sample](config/samples/private.onprem-ntlm.json) |
-| `/adfs` | ✅ | ✅ | [spo](config/samples/private.spo-adfs.json), [on-prem](config/samples/private.onprem-adfs.json), [on-prem \(wap\)](config/samples/private.onprem-wap.json) |
-| `/fba` | ❌ | ✅ | [sample](config/samples/private.onprem-fba.json) |
-| `/tmg` | ❌ | ✅ | [sample](config/samples/private.onprem-tmg.json) |
-
-JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
-
-### SAML Auth \(SharePoint Online user credentials authentication\)
-
-This authentication option uses Microsoft Online Security Token Service `https://login.microsoftonline.com/extSTS.srf` and SAML tokens in order to obtain authentication cookie.
-
-```go
-// AuthCnfg - SAML auth config structure
-type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Username for SharePoint Online, e.g. `[user]@[company].onmicrosoft.com`
-    Username string `json:"username"`
-    // User or App password
-    Password string `json:"password"`
-}
-```
-
-### AddIn Only Auth
-
-This type of authentication uses AddIn Only policy and OAuth bearer tokens for authenticating HTTP requests.
-
-```go
-// AuthCnfg - AddIn Only auth config structure
-type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Client ID obtained when registering the AddIn
-    ClientID string `json:"clientId"`
-    // Client Secret obtained when registering the AddIn
-    ClientSecret string `json:"clientSecret"`
-    // Your SharePoint Online tenant ID (optional)
-    Realm string `json:"realm"`
-}
-```
-
-Realm can be left empty or filled in, that will add small performance improvement. The easiest way to find tenant is to open SharePoint Online site collection, click `Site Settings` -&gt; `Site App Permissions`. Taking any random app, the tenant ID \(realm\) is the GUID part after the `@`.
-
-See more details of [AddIn Configuration and Permissions](https://github.com/s-kainet/node-sp-auth/wiki/SharePoint-Online-addin-only-authentication).
-
-### NTLM Auth \(NTLM handshake\)
-
-This type of authentication uses HTTP NTLM handshake in order to obtain authentication header.
-
-```go
-// AuthCnfg - NTML auth config structure
-type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL  string `json:"siteUrl"`
-    Domain   string `json:"domain"`   // AD domain name
-    Username string `json:"username"` // AD user name
-    Password string `json:"password"` // AD user password
-}
-```
-
-Gosip uses `github.com/Azure/go-ntlmssp` NTLM negotiator, however a custom one also can be [provided](https://github.com/koltyakov/gosip/issues/14) in case of demand.
-
-### ADFS Auth \(user credentials authentication\)
-
-```go
-// AuthCnfg - ADFS auth config structure
-type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL      string `json:"siteUrl"`
-    Username     string `json:"username"`
-    Password     string `json:"password"`
-    // Following are not required for SPO
-    Domain       string `json:"domain"`
-    RelyingParty string `json:"relyingParty"`
-    AdfsURL      string `json:"adfsUrl"`
-    AdfsCookie   string `json:"adfsCookie"`
-}
-```
-
-See more details [ADFS user credentials authentication](https://github.com/s-kainet/node-sp-auth/wiki/ADFS-user-credentials-authentication).
-
-Gosip's ADFS also supports a scenario of ADFS or NTML behind WAP \(Web Application Proxy\) which adds additional auth flow and `EdgeAccessCookie` involved into play.
-
-### FBA/TMG Auth \(Form-based authentication\)
-
-FBA - Form-based authentication for SharePoint On-Premises.
-
-TMG - Microsoft Forefront Threat Management Gateway, currently is legacy but was a popular way of exposing SharePoint into external world back in the days.
-
-```go
-// AuthCnfg - FBA/TMG auth config structure
-type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Username for SharePoint On-Prem,
-    // format depends in FBA/TMG settings, can include domain or doesn't
-    Username string `json:"username"`
-    // User password
-    Password string `json:"password"`
-}
-```
-
-## Secrets encoding
-
-When storing credential in local `private.json` files, which can be handy in local development scenarios, we strongly recommend to encode secrets such as `password` or `clientSecret` using [cpass](cmd/cpass/README.md). Cpass converts a secret to an encrypted representation which can only be decrypted on the same machine where it was generated. This minimize incidental leaks, i.e. with git commits.
 
 ## Reference
 
