@@ -19,5 +19,6 @@
 
 ## Contributing
 
+* [Overview](contributing/overview.md)
 * [Testing](contributing/testing.md)
 
