@@ -81,3 +81,25 @@ Sends `POST` request, embeds `"Accept": "application/json;odata=verbose"`, `"Con
 
 Sends `POST` request to `/_vti_bin/client.svc/ProcessQuery` endpoint \(CSOM\). All required headers for a CSOM request are embed automatically. Method's body should stand for a valid CSOM XML package. The response body is parsed for error handling, yet returned in it's original form.
 
+### Low-level HTTP client
+
+Sometimes more control is required, e.g. when downloading files or large responses you could prefer precessing a response in chunks. This can be achieved with the low-level usage of Gosip HTTP client.
+
+```go
+client := &gosip.SPClient{AuthCnfg: auth}
+
+var req *http.Request
+// Initiate API request
+// ...
+
+resp, err := client.Execute(req)
+if err != nil {
+    fmt.Printf("Unable to request api: %v", err)
+    return
+}
+```
+
+SPClient has `Execute` method which is a wrapper function injecting SharePoint authentication and ending up calling http.Client's `Do` method.
+
+So you can dive down to native `*http.Request` at this point it's just a standard request from "net/http" package, but authenticated to SharePoint and with some batteries under the hood for a seemles API integration.
+
