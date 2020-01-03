@@ -1,13 +1,14 @@
 ---
-description: NTLM handshake
+description: NTLM handshake authentication
 ---
 
 # NTLM Auth
 
 This type of authentication uses HTTP NTLM handshake in order to obtain authentication header.
 
+### Struct
+
 ```go
-// AuthCnfg - NTML auth config structure
 type AuthCnfg struct {
     // SPSite or SPWeb URL, which is the context target for the API calls
     SiteURL  string `json:"siteUrl"`
@@ -18,4 +19,27 @@ type AuthCnfg struct {
 ```
 
 Gosip uses `github.com/Azure/go-ntlmssp` NTLM negotiator, however a custom one also can be [provided](https://github.com/koltyakov/gosip/issues/14) in case of demand.
+
+### JSON
+
+`private.json` sample:
+
+```javascript
+{
+  "siteUrl": "https://www.contoso.com/sites/test",
+  "username": "contoso\\john.doe",
+  "password": "this-is-not-a-real-password"
+}
+```
+
+or
+
+```javascript
+{
+  "siteUrl": "https://www.contoso.com/sites/test",
+  "username": "john.doe",
+  "domain": "contoso",
+  "password": "this-is-not-a-real-password"
+}
+```
 

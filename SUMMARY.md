@@ -6,7 +6,7 @@
 
 * [Overview](auth/overview.md)
 * [SAML Auth](auth/saml.md)
-* [AddIn Only Auth](auth/addin.md)
+* [AddIn Only](auth/addin.md)
 * [NTLM Auth](auth/ntlm.md)
 * [ADFS Auth](auth/adfs.md)
 * [FBA Auth](auth/fba.md)
