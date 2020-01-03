@@ -26,7 +26,9 @@ Gosip's ADFS also supports a scenario of ADFS or NTML behind WAP \(Web Applicati
 
 ### JSON
 
-`private.json` On-Premises sample:
+#### On-Premises configuration
+
+`private.json` sample:
 
 ```javascript
 {
@@ -39,7 +41,9 @@ Gosip's ADFS also supports a scenario of ADFS or NTML behind WAP \(Web Applicati
 }
 ```
 
-`private.json` On-Premises behind WAP sample:
+#### On-Premises behing WAP configuration
+
+`private.json` sample:
 
 ```javascript
 {
@@ -52,7 +56,9 @@ Gosip's ADFS also supports a scenario of ADFS or NTML behind WAP \(Web Applicati
 }
 ```
 
-`private.json` SPO sample:
+#### SharePoint Online configuration
+
+`private.json` sample:
 
 ```javascript
 {
