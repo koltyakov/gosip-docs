@@ -33,7 +33,7 @@ func main() {
     // Binding SharePoint API
     sp := api.NewSP(client)
 
-    // Custom headers
+    // Custom headers (optional)
     headers := map[string]string{
         "Accept": "application/json;odata=minimalmetadata",
         "Accept-Language": "de-DE,de;q=0.9",
@@ -46,7 +46,8 @@ func main() {
         log.Fatalln(err)
     }
 
-    // Response object unmarshalling (struct depends on OData mode and API method)
+    // Response object unmarshalling
+    // struct depends on OData mode and API method
     res := &struct {
         Value []struct {
             ID    string `json:"Id"`
