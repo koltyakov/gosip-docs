@@ -19,5 +19,5 @@
 
 ## Contributing
 
-* [Tests](contributing/tests.md)
+* [Testing](contributing/testing.md)
 
