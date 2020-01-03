@@ -5,10 +5,10 @@
 ## Authentication strategies <a id="auth"></a>
 
 * [Overview](auth/overview.md)
-* [SAML Auth](auth/saml-auth.md)
-* [AddIn Only Auth](auth/addin-only-auth.md)
-* [NTLM Auth](auth/ntlm-auth.md)
-* [ADFS Auth](auth/adfs-auth.md)
-* [FBA Auth](auth/fba-auth.md)
-* [TMG Auth](auth/tmg-auth.md)
+* [SAML Auth](auth/saml.md)
+* [AddIn Only Auth](auth/addin.md)
+* [NTLM Auth](auth/ntlm.md)
+* [ADFS Auth](auth/adfs.md)
+* [FBA Auth](auth/fba.md)
+* [TMG Auth](auth/tmg.md)
 
