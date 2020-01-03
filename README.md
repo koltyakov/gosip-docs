@@ -66,7 +66,7 @@ auth := &strategy.AuthCnfg{
 
 AuthCnfg's from different strategies contains different options relevant for a specified auth type.
 
-The authentication options can be provided explicitly or can be read from a configuration file \(see [more](auth/overview.md#authentication-strategies)\).
+The authentication options can be provided explicitly or can be read from a configuration file \(see [more](auth/overview/#authentication-strategies)\).
 
 ```go
 configPath := "./config/private.json"

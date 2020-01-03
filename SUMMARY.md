@@ -4,15 +4,19 @@
 
 ## Authentication strategies <a id="auth"></a>
 
-* [Overview](auth/overview.md)
-* [SAML Auth](auth/saml.md)
-* [AddIn Only](auth/addin.md)
-* [NTLM Auth](auth/ntlm.md)
-* [ADFS Auth](auth/adfs.md)
-* [FBA Auth](auth/fba.md)
-* [TMG Auth](auth/tmg.md)
+* [Overview](auth/overview/README.md)
+  * [SAML Auth](auth/overview/saml.md)
+  * [AddIn Only](auth/overview/addin.md)
+  * [NTLM Auth](auth/overview/ntlm.md)
+  * [ADFS Auth](auth/overview/adfs.md)
+  * [FBA Auth](auth/overview/fba.md)
+  * [TMG Auth](auth/overview/tmg.md)
 
 ## Utilities <a id="utilits"></a>
 
 * [Cpass](utilits/cpass.md)
+
+## Contributing
+
+* [Tests](contributing/tests.md)
 
