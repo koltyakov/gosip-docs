@@ -1,7 +1,5 @@
 ---
-description: >-
-  Gosip - SharePoint authentication, HTTP client & fluent API wrapper for Go
-  (Golang)
+description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper for Go (Golang)'
 ---
 
 # Introduction
