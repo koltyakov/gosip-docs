@@ -4,7 +4,7 @@ description: Download & upload files from/to SharePoint is simple
 
 # Documents sample
 
-SharePoint is the ECM \(Enterprise Content Management\) system and it's common to expect files being uploaded, downloaded, migrated, processes, and managed in a variety ways.
+SharePoint is ECM \(Enterprise Content Management\) system and it's common to expect files being uploaded, downloaded, migrated, processes, and managed in a variety ways.
 
 Gosip provides an easy way of dealing with SharePoint document listaries, files and folders.
 
