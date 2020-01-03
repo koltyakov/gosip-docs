@@ -59,7 +59,7 @@ import (
 2. Initiate authentication object.
 
 ```go
-auth := &amp;strategy.AuthCnfg{
+auth := &strategy.AuthCnfg{
     SiteURL:      os.Getenv("SPAUTH_SITEURL"),
     ClientID:     os.Getenv("SPAUTH_CLIENTID"),
     ClientSecret: os.Getenv("SPAUTH_CLIENTSECRET"),
@@ -72,7 +72,7 @@ The authentication options can be provided explicitly or can be read from a conf
 
 ```go
 configPath := "./config/private.json"
-auth := &amp;strategy.AuthCnfg{}
+auth := &strategy.AuthCnfg{}
 
 err := auth.ReadConfig(configPath)
 if err != nil {
@@ -84,7 +84,7 @@ if err != nil {
 3. Bind auth client with Fluent API.
 
 ```go
-client := &amp;gosip.SPClient{AuthCnfg: auth}
+client := &gosip.SPClient{AuthCnfg: auth}
 
 sp := api.NewSP(client)
 
@@ -130,7 +130,7 @@ func main() {
         "Accept": "application/json;odata=minimalmetadata",
         "Accept-Language": "de-DE,de;q=0.9",
     }
-    config := &amp;api.RequestConfig{Headers: headers}
+    config := &api.RequestConfig{Headers: headers}
 
     // Chainable request sample
     data, err := sp.Conf(config).Web().Lists().Select("Id,Title").Get()
@@ -140,14 +140,14 @@ func main() {
 
     // Response object unmarshalling
     // (struct depends on OData mode and API method)
-    res := &amp;struct {
+    res := &struct {
         Value []struct {
             ID    string `json:"Id"`
             Title string `json:"Title"`
         } `json:"value"`
     }{}
 
-    if err := json.Unmarshal(data, &amp;res); err != nil {
+    if err := json.Unmarshal(data, &res); err != nil {
         log.Fatalf("unable to parse the response: %v", err)
     }
 
@@ -159,11 +159,11 @@ func main() {
 
 func getAuthClient() (*gosip.SPClient, error) {
     configPath := "./config/private.spo-addin.json" // <- file with creds
-    auth := &amp;strategy.AuthCnfg{}
+    auth := &strategy.AuthCnfg{}
     if err := auth.ReadConfig(configPath); err != nil {
         return nil, fmt.Errorf("unable to get config: %v", err)
     }
-    return &amp;gosip.SPClient{AuthCnfg: auth}, nil
+    return &gosip.SPClient{AuthCnfg: auth}, nil
 }
 ```
 
@@ -185,13 +185,13 @@ import (
 
 func main() {
     configPath := "./config/private.ntlm.json"
-    auth := &amp;strategy.AuthCnfg{}
+    auth := &strategy.AuthCnfg{}
 
     if err := auth.ReadConfig(configPath); err != nil {
         log.Fatalf("unable to get config: %v\n", err)
     }
 
-    sp := api.NewHTTPClient(&amp;gosip.SPClient{AuthCnfg: auth})
+    sp := api.NewHTTPClient(&gosip.SPClient{AuthCnfg: auth})
 
     endpoint := auth.GetSiteURL() + "/_api/web?$select=Title"
 
@@ -220,7 +220,7 @@ func main() {
 Low-lever SharePoint-aware HTTP client from `github.com/koltyakov/gosip` package for custom or not covered with a Fluent API client endpoints with granular control for HTTP request, response, and http.Client parameters. Used internally but almost never required in a consumer code.
 
 ```go
-client := &amp;gosip.SPClient{AuthCnfg: auth}
+client := &gosip.SPClient{AuthCnfg: auth}
 
 var req *http.Request
 // Initiate API request
