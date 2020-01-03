@@ -8,12 +8,12 @@ Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{st
 
 | `/{strategy}` | SPO | On-Prem | Credentials sample\(s\) |
 | :--- | :--- | :--- | :--- |
-| `/saml` | ✅ | ❌ | [sample](config/samples/private.spo-user.json) |
-| `/addin` | ✅ | ❌ | [sample](config/samples/private.spo-addin.json) |
-| `/ntlm` | ❌ | ✅ | [sample](config/samples/private.onprem-ntlm.json) |
-| `/adfs` | ✅ | ✅ | [spo](config/samples/private.spo-adfs.json), [on-prem](config/samples/private.onprem-adfs.json), [on-prem \(wap\)](config/samples/private.onprem-wap.json) |
-| `/fba` | ❌ | ✅ | [sample](config/samples/private.onprem-fba.json) |
-| `/tmg` | ❌ | ✅ | [sample](config/samples/private.onprem-tmg.json) |
+| `/saml` | ✅ | ❌ | [sample](addin.md#json) |
+| `/addin` | ✅ | ❌ | [sample](addin.md#json) |
+| `/ntlm` | ❌ | ✅ | [sample](ntlm.md#json) |
+| `/adfs` | ✅ | ✅ | [spo](adfs.md#sharepoint-online-configuration), [on-prem](adfs.md#on-premises-configuration), [on-prem \(wap\)](adfs.md#on-premises-behing-wap-configuration) |
+| `/fba` | ❌ | ✅ | [sample](fba.md#json) |
+| `/tmg` | ❌ | ✅ | [sample](tmg.md#json) |
 
 JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
 
