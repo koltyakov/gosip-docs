@@ -16,7 +16,8 @@
 ## SharePoint client <a id="api"></a>
 
 * [HTTP Client](api/http-client.md)
-* [Fluent API](api/fluent-api.md)
+* [Fluent API](api/fluent-api/README.md)
+  * [CRUD Sample](api/fluent-api/crud.md)
 
 ## Utilities <a id="utilits"></a>
 
