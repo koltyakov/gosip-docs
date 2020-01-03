@@ -13,6 +13,11 @@
   * [FBA Auth](auth/strategies/fba.md)
   * [TMG Auth](auth/strategies/tmg.md)
 
+## SharePoint client <a id="api"></a>
+
+* [HTTP Client](api/http-client.md)
+* [Fluent API](api/fluent-api.md)
+
 ## Utilities <a id="utilits"></a>
 
 * [Cpass](utilits/cpass.md)

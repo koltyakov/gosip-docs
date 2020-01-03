@@ -12,7 +12,7 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 * Unattended authentication using different strategies.
 * Fluent API syntax for SharePoint object model.
-* Simplified API consumption \(REST, CSOM, SOAP\).
+* Simplified API consumption \(REST, CSOM, SOAP, etc.\).
 * SharePoint-aware embedded features \(retries, header presets, error handling\).
 
 ### Supported SharePoint versions
@@ -20,7 +20,7 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 * SharePoint Online \(SPO\)
 * On-Premises \(2019/2016/2013\)
 
-### Supported authentication strategies
+### Supported auth strategies
 
 * SharePoint On-Premises 2019/2016/2013:
   * User credentials \(NTLM\)
