@@ -18,6 +18,7 @@
 * [HTTP Client](api/http-client.md)
 * [Fluent API](api/fluent-api/README.md)
   * [CRUD Sample](api/fluent-api/crud.md)
+  * [Documents sample](api/fluent-api/documents-operations.md)
 
 ## Utilities <a id="utilits"></a>
 
