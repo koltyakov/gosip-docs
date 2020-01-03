@@ -43,3 +43,37 @@ or
 }
 ```
 
+### Code sample
+
+```go
+package main
+
+import (
+	"log"
+	// "os"
+
+	"github.com/koltyakov/gosip"
+	strategy "github.com/koltyakov/gosip/auth/ntlm"
+)
+
+func main() {
+
+	// authCnfg := &strategy.AuthCnfg{
+	// 	SiteURL:  os.Getenv("SPAUTH_SITEURL"),
+	// 	Username: os.Getenv("SPAUTH_USERNAME"),
+	// 	Password: os.Getenv("SPAUTH_PASSWORD"),
+	// }
+	// or using `private.json` creds source
+
+	authCnfg := &strategy.AuthCnfg{}
+	configPath := "./config/private.json"
+	if err := authCnfg.ReadConfig(configPath); err != nil {
+		log.Fatalf("unable to get config: %v", err)
+	}
+
+	client := &gosip.SPClient{AuthCnfg: authCnfg}
+	// use client in raw requests or bind it with Fluent API ...
+
+}
+```
+
