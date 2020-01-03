@@ -80,6 +80,7 @@ func getAuthClient() (*gosip.SPClient, error) {
 * Get authenticated
 * Construct root `SP` object using `api.NewSP(client)`
 * Construct API calls in a fluent way
-* Parse responses in a Go way
+* Parse responses in the Go way
 * Embrase strongly typed generic responses
+* Build awesome apps in Go for SharePoint
 
