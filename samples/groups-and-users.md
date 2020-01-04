@@ -163,7 +163,7 @@ You'd probably will be interested with the connected topics:
 
 {% page-ref page="permissions.md" %}
 
-{% page-ref page="wip/search-api.md" %}
+{% page-ref page="search-api.md" %}
 
 {% page-ref page="wip/user-profiles.md" %}
 
