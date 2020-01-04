@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [FAQ](faq.md)
 
 ## Authentication strategies <a id="auth"></a>
 
@@ -23,6 +24,17 @@
 * [Basic CRUD](api/fluent/crud-sample.md)
 * [Documents](api/fluent/documents-sample.md)
 * [Permissions](samples/permissions.md)
+* [Groups & Users](samples/groups-and-users.md)
+* [Search API](samples/search-api.md)
+* [Change API](samples/change-api.md)
+* [User Profiles](samples/user-profiles.md)
+* [Attachments](samples/attachments.md)
+* [Record Management](samples/record-management.md)
+* [Sending Emails](samples/sending-emails.md)
+* [Web Properties](samples/web-properties.md)
+* [Recycle Bin](samples/recycle-bin.md)
+* [Advanced items requests](samples/advanced-items-requests.md)
+* [Features management](samples/features-management.md)
 
 ## Utilities <a id="utilits"></a>
 
