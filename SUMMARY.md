@@ -17,24 +17,25 @@
 ## SharePoint client <a id="api"></a>
 
 * [HTTP Client](api/http-client.md)
-* [Fluent API](api/fluent/README.md)
+* [Fluent API](api/fluent.md)
 
 ## Samples
 
-* [Basic CRUD](api/fluent/crud-sample.md)
-* [Documents](api/fluent/documents-sample.md)
+* [Basic CRUD](samples/basic-crud.md)
+* [Documents](samples/documents.md)
 * [Permissions](samples/permissions.md)
-* [Groups & Users](samples/groups-and-users.md)
-* [Search API](samples/search-api.md)
-* [Change API](samples/change-api.md)
-* [User Profiles](samples/user-profiles.md)
-* [Attachments](samples/attachments.md)
-* [Record Management](samples/record-management.md)
-* [Sending Emails](samples/sending-emails.md)
-* [Web Properties](samples/web-properties.md)
-* [Recycle Bin](samples/recycle-bin.md)
-* [Advanced items requests](samples/advanced-items-requests.md)
-* [Features management](samples/features-management.md)
+* [WIP](samples/wip/README.md)
+  * [Groups & Users](samples/wip/groups-and-users.md)
+  * [Search API](samples/wip/search-api.md)
+  * [Change API](samples/wip/change-api.md)
+  * [User Profiles](samples/wip/user-profiles.md)
+  * [Attachments](samples/wip/attachments.md)
+  * [Record Management](samples/wip/record-management.md)
+  * [Sending Emails](samples/wip/sending-emails.md)
+  * [Web Properties](samples/wip/web-properties.md)
+  * [Recycle Bin](samples/wip/recycle-bin.md)
+  * [Advanced items requests](samples/wip/advanced-items-requests.md)
+  * [Features management](samples/wip/features-management.md)
 
 ## Utilities <a id="utilits"></a>
 
