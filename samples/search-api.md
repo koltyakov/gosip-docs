@@ -76,7 +76,7 @@ Search query struct \(`api.SearchQuery`\) contains some, let's say, reasonable a
 
 ![](https://github.githubassets.com/images/icons/emoji/trollface.png)
 
-But don't be afraid you use only few of them and on demand and when know what you need. 
+But don't be afraid you use only a few of them and on demand and when know what you need. 
 
 ### User profiles search sample
 
