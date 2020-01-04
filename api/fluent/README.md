@@ -6,7 +6,7 @@ description: "\U0001F3C4 Fluent, chainable, IntelliSense powered syntax to maste
 
 Provides a simple way of constructing API endpoint calls with IntelliSense and chainable syntax.
 
-![](../.gitbook/assets/fluent.gif)
+![](../../.gitbook/assets/fluent.gif)
 
 ### Usage sample
 

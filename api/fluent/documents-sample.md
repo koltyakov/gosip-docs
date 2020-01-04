@@ -2,7 +2,7 @@
 description: Download & upload files from/to SharePoint is simple
 ---
 
-# Documents
+# Documents sample
 
 SharePoint is ECM \(Enterprise Content Management\) system and it's common to expect files being uploaded, downloaded, migrated, processes, and managed in a variety ways.
 
