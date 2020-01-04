@@ -24,7 +24,7 @@
 * [Basic CRUD](samples/basic-crud.md)
 * [Documents](samples/documents.md)
 * [Permissions](samples/permissions.md)
-* [Groups & Users](samples/groups-and-users.md)
+* [Groups & Users](samples/wip/groups-and-users.md)
 * [WIP](samples/wip/README.md)
   * [Search API](samples/wip/search-api.md)
   * [Change API](samples/wip/change-api.md)

@@ -4,15 +4,23 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 # Strategies
 
-### [SAML](saml.md)
+{% tabs %}
+{% tab title="SharePoint Online" %}
+{% page-ref page="saml.md" %}
 
-### [AddIn Only](addin.md)
+{% page-ref page="addin.md" %}
 
-### [NTLM](ntlm.md)
+{% page-ref page="adfs.md" %}
+{% endtab %}
 
-### [ADFS](adfs.md)
+{% tab title="SharePoint On-Premises" %}
+{% page-ref page="ntlm.md" %}
 
-### [FBA](fba.md)
+{% page-ref page="adfs.md" %}
 
-### [TMG](tmg.md)
+{% page-ref page="fba.md" %}
+
+{% page-ref page="tmg.md" %}
+{% endtab %}
+{% endtabs %}
 
