@@ -2,7 +2,7 @@
 description: 'Create, read, update and delete'
 ---
 
-# CRUD Sample
+# Basic CRUD
 
 CRUD is the most commonly requested type of API consumption.
 

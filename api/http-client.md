@@ -8,7 +8,7 @@ Gosip HTTP client for SharePoint allows consuming any HTTP resource or API, it c
 
 Gosip HTTP client is SharePoint nuances-aware, it takes care under the hood of such things as headers, API calls retries, threshholds, error handling, POST API requests Digests, and, of course, authentication and its renewal.
 
-However, dealing at low-level, means you should know SharePoint API rather well and you're ok with the verbosity of Go. If you just starting with SharePoint please consider [Fluent API](fluent/) client first and HTTP client for none covered methods and custom stuff.
+However, dealing at low-level, means you should know SharePoint API rather well and you're ok with the verbosity of Go. If you just starting with SharePoint please consider [Fluent API](fluent.md) client first and HTTP client for none covered methods and custom stuff.
 
 ### Usage
 
