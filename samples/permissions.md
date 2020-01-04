@@ -4,7 +4,7 @@ description: Managing roles and objects permissions
 
 # Permissions
 
-Permissions management an important part of business logic which can be met in worker processes and workflows.
+Permissions management is an important part of business logic which can be met in worker processes and workflows.
 
 Let's explore how Gosip Fluent API wraps up SharePoint securable object and permissions.
 
