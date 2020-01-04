@@ -68,6 +68,26 @@ fmt.Printf(
 )
 ```
 
+### Creating groups
+
+```go
+group, err := sp.Web().SiteGroups().Add("My group", nil)
+if err != nil {
+	log.Fatal(err)
+}
+
+fmt.Printf("New group ID: %d\n", group.Data().ID)
+```
+
+### Deleting groups
+
+```go
+// or .RemoveByID(groupID)
+if err := sp.Web().SiteGroups().RemoveByLoginName("My group"); err != nil {
+	log.Fatal(err)
+}
+```
+
 ### Adding user to a group
 
 ```go
