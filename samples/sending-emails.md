@@ -4,15 +4,15 @@ description: Email notifications utility
 
 # Sending Emails
 
-There is nothing simpler than sending email notifications using SharePoint REST and Gosip Fluent API. However, when building workflow workers or custom subscription services email functionality is vital. And what can be better than embedded OOTB functionality? No extra knowledge of SMTP server and mail credentials, just a usual API call to `_api/SP.Utilities.Utility.SendEmail` utility endpoint.
+There is nothing simpler than sending email notifications using SharePoint REST and Gosip Fluent API. However, when building workflow workers or custom subscription services email functionality is vital. And what can be better than embeded OOTB functionality? No extra knowledge of SMTP server and mail credentials, just a usual API call to `_api/SP.Utilities.Utility.SendEmail` utility endpoint.
 
-There are some limitations to this method:
+There are some limitation with this method:
 
 * recipients only from the site
-* impossibility to change the sender
+* impossibility to change sender
 * no attachments
 
-but as embedded solution it's OK. And probably sort of workflow notification service should stay in such margins anyways.
+but as embeded solution it's OK. And probably sort of workflow notification service should stay in such margins anyways.
 
 ### Sending email notification
 
@@ -33,5 +33,5 @@ if err := sp.Utility().SendEmail(&api.EmailProps{
 }
 ```
 
-Send email utility is not sophisticated but it works and enough for an embedded functionality.
+Send email utility is not sofisticated but it works and enough for an embeded funcitionality.
 

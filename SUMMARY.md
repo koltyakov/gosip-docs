@@ -28,7 +28,7 @@
 * [Search API](samples/search-api.md)
 * [User Profiles](samples/user-profiles.md)
 * [Change API](samples/wip/change-api.md)
-* [Attachments](samples/wip/attachments.md)
+* [Attachments](samples/attachments.md)
 * [Record Management](samples/wip/record-management.md)
 * [Sending Emails](samples/sending-emails.md)
 * [WIP](samples/wip/README.md)
