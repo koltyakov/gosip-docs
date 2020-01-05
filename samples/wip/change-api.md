@@ -104,5 +104,34 @@ When getting the changes the API requires some clarifications about what exactly
 
 | Property | Description |
 | :--- | :--- |
-| ... | ... |
+| ChangeTokenStart | Specifies the start date and start time for changes that are returned through the query |
+| ChangeTokenEnd | Specifies the end date and end time for changes that are returned through the query |
+| Add | Specifies whether add changes are included in the query |
+| Alert | Specifies whether changes to alerts are included in the query |
+| ContentType | Specifies whether changes to content types are included in the query |
+| DeleteObject | Specifies whether deleted objects are included in the query |
+| Field | Specifies whether changes to fields are included in the query |
+| File | Specifies whether changes to files are included in the query |
+| Folder | Specifies whether changes to folders are included in the query |
+| Group | Specifies whether changes to groups are included in the query |
+| GroupMembershipAdd | Specifies whether adding users to groups is included in the query |
+| GroupMembershipDelete | Specifies whether deleting users from the groups is included in the query |
+| Item | Specifies whether general changes to list items are included in the query |
+| List | Specifies whether changes to lists are included in the query |
+| Move | Specifies whether move changes are included in the query |
+| Navigation | Specifies whether changes to the navigation structure of a site collection are included in the query |
+| Rename | Specifies whether renaming changes are included in the query |
+| Restore | Specifies whether restoring items from the recycle bin or from backups is included in the query |
+| RoleAssignmentAdd | Specifies whether adding role assignments is included in the query |
+| RoleAssignmentDelete | Specifies whether adding role assignments is included in the query |
+| RoleDefinitionAdd | Specifies whether adding role assignments is included in the query |
+| RoleDefinitionDelete | Specifies whether adding role assignments is included in the query |
+| RoleDefinitionUpdate | Specifies whether adding role assignments is included in the query |
+| SecurityPolicy | Specifies whether modifications to security policies are included in the query |
+| Site | Specifies whether changes to site collections are included in the query |
+| SystemUpdate | Specifies whether updates made using the item SystemUpdate method are included in the query |
+| Update | Specifies whether update changes are included in the query |
+| User | Specifies whether changes to users are included in the query |
+| View | Specifies whether changes to views are included in the query |
+| Web | Specifies whether changes to Web sites are included in the query |
 
