@@ -32,8 +32,8 @@
 * [Record Management](samples/record-management.md)
 * [Sending Emails](samples/sending-emails.md)
 * [Property Bags](samples/property-bags.md)
+* [Recycle Bin](samples/recycle-bin.md)
 * [WIP](samples/wip/README.md)
-  * [Recycle Bin](samples/wip/recycle-bin.md)
   * [Advanced items requests](samples/wip/advanced-items-requests.md)
   * [Features management](samples/wip/features-management.md)
 
