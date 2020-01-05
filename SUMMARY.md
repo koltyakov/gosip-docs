@@ -33,9 +33,9 @@
 * [Sending Emails](samples/sending-emails.md)
 * [Property Bags](samples/property-bags.md)
 * [Recycle Bin](samples/recycle-bin.md)
+* [Feature management](samples/feature-management.md)
 * [WIP](samples/wip/README.md)
   * [Advanced items requests](samples/wip/advanced-items-requests.md)
-  * [Features management](samples/wip/features-management.md)
 
 ## Utilities <a id="utilits"></a>
 
