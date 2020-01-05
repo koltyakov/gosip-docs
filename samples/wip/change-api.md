@@ -10,21 +10,21 @@ Changes API is what is used together with Webhooks \(in SPO\), by having a conte
 
 Changes can be requested from within different scopes: lists, webs, sites, etc.
 
-Change API operates change tokens to establish start and end anchors. Change tokens received from a specific entity type \(e.g. Site\) can't be used with another entity type \(e.g. List\) while sending change query.
+Change API operates change tokens to establish start and end anchors. Change tokens received from a specific entity type \(e.g. Site\) can't be used with another entity type \(e.g. List\) while sending  change query.
 
 ### Getting current change token
 
 ```go
 siteChangeToken, err := sp.Site().Changes().GetCurrentToken()
 if err != nil {
-    log.Fatal(err)
+	log.Fatal(err)
 }
 
 fmt.Printf("Site change token: %s\n", siteChangeToken)
 
 webChangeToken, err := sp.Web().Changes().GetCurrentToken()
 if err != nil {
-    log.Fatal(err)
+	log.Fatal(err)
 }
 
 fmt.Printf("Web change token: %s\n", webChangeToken)
@@ -32,7 +32,7 @@ fmt.Printf("Web change token: %s\n", webChangeToken)
 list := sp.Web().GetList("Lists/MyList")
 listChangeToken, err := list.Changes().GetCurrentToken()
 if err != nil {
-    log.Fatal(err)
+	log.Fatal(err)
 }
 
 fmt.Printf("List change token: %s\n", listChangeToken)
@@ -56,17 +56,17 @@ list.Items().Add([]byte(`{"Title":"New item"}`))
 // error handling is omitted -- adding a dummy item to receive changes result
 
 changes, err := list.Changes().GetChanges(&api.ChangeQuery{
-    ChangeTokenStart: listChangeToken,
-    List:             true,
-    Item:             true,
-    Add:              true,
+	ChangeTokenStart: listChangeToken,
+	List:             true,
+	Item:             true,
+	Add:              true,
 })
 if err != nil {
-    log.Fatal(err)
+	log.Fatal(err)
 }
 
 for _, change := range changes {
-    fmt.Printf("%+v\n", change)
+	fmt.Printf("%+v\n", change)
 }
 ```
 
@@ -76,19 +76,19 @@ Change into struct contains the following properties:
 
 ```go
 type ChangeInfo struct {
-    ChangeToken       *StringValue
-    ChangeType        int
-    Editor            string
-    EditorEmailHint   string
-    ItemID            int
-    ListID            string
-    ServerRelativeURL string
-    SharedByUser      string
-    SharedWithUsers   string
-    SiteID            string
-    Time              time.Time
-    UniqueID          string
-    WebID             string
+	ChangeToken       *StringValue
+	ChangeType        int
+	Editor            string
+	EditorEmailHint   string
+	ItemID            int
+	ListID            string
+	ServerRelativeURL string
+	SharedByUser      string
+	SharedWithUsers   string
+	SiteID            string
+	Time              time.Time
+	UniqueID          string
+	WebID             string
 }
 ```
 
@@ -97,8 +97,6 @@ type ChangeInfo struct {
 {% hint style="info" %}
 Change API doesn't return what specifically was changed but only where it was changed. For instance, when an item is changed the API will return its identities information but not the metadata.
 {% endhint %}
-
-In a synchronisation scenario or a Webhook after getting information which items are changed the corresponding request\(s\) should be sent for getting specifics.
 
 ### Change query
 
@@ -136,8 +134,4 @@ When getting the changes the API requires some clarifications about what exactly
 | User | Specifies whether changes to users are included in the query |
 | View | Specifies whether changes to views are included in the query |
 | Web | Specifies whether changes to Web sites are included in the query |
-
-### Summary
-
-Change API is a powerful mechanism and a robust way for processing delta changes which can and should be used in advanced and optimized synchronizations and business processes withing external workers.
 
