@@ -21,7 +21,7 @@ Checkout [the code](https://github.com/koltyakov/gosip-sandbox/blob/master/strat
 * Authentication settings
   * Public client/native \(mobile & desktop\)
   * Suggested Redirect URIs for public clients \(mobile, desktop\) - [https://login.microsoftonline.com/common/oauth2/nativeclient](https://login.microsoftonline.com/common/oauth2/nativeclient) - checked
-  * Default client type - Yes - for Device code flow [Learn more](https://go.microsoft.com/fwlink/?linkid=2094804)
+  * Default client type - Yes - for Device code flow, [learn more](https://go.microsoft.com/fwlink/?linkid=2094804)
 * App permissions
   * Azure Service Management :: user\_impersonation
   * SharePoint :: based on your application requirements
