@@ -62,3 +62,5 @@ And finally, `SetAuth`, the method where all the magic happening. `SetAuth` meth
 
 By implementing AuthCnfg struct and gosip.AuthCnfg interface any custom authentication can be added to Gosip. 
 
+{% page-ref page="azure-device-flow.md" %}
+
