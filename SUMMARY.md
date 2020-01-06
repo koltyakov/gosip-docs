@@ -34,8 +34,7 @@
 * [Property Bags](samples/property-bags.md)
 * [Recycle Bin](samples/recycle-bin.md)
 * [Feature management](samples/feature-management.md)
-* [WIP](samples/wip/README.md)
-  * [Advanced items requests](samples/wip/advanced-items-requests.md)
+* [Advanced item requests](samples/advanced-item-requests.md)
 
 ## Utilities <a id="utilits"></a>
 
