@@ -13,6 +13,7 @@
   * [ADFS Auth](auth/strategies/adfs.md)
   * [FBA Auth](auth/strategies/fba.md)
   * [TMG Auth](auth/strategies/tmg.md)
+* [Custom Auth](auth/custom-auth.md)
 
 ## SharePoint client <a id="api"></a>
 
