@@ -4,7 +4,7 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 # Introduction
 
-![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/gosip?branchName=master) [![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip) [![GoDoc](https://godoc.org/github.com/koltyakov/gosip?status.svg)](https://godoc.org/github.com/koltyakov/gosip) [![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip?ref=badge_shield)
+![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/gosip?branchName=master) [![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip) [![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)![GoDoc](https://godoc.org/github.com/koltyakov/gosip?status.svg)](https://godoc.org/github.com/koltyakov/gosip) [![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE) 
 
 ![](.gitbook/assets/gosip.png)
 
