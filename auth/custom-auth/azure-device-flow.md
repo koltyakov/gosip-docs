@@ -10,7 +10,11 @@ This article is the sample showing Gosip custom auth with [AAD Device Token Auth
 
 ### Custom auth implementation
 
-Checkout [the code](https://github.com/koltyakov/gosip-sandbox/blob/master/strategies/device/device.go) on GitHub. The implementation is pretty straightforward and follows the principles described in details on [Custom Auth](./) docs page.
+{% hint style="success" %}
+Check out [the code](https://github.com/koltyakov/gosip-sandbox/blob/master/strategies/device/device.go) on GitHub.
+{% endhint %}
+
+The implementation is pretty straightforward and follows the principles described in details on [Custom Auth](./) docs page.
 
 ### Azure App registration
 

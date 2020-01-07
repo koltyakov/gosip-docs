@@ -47,10 +47,16 @@ SPAUTH_ENVCODE=2013 go test ./api/... -v -count=1
 
 ### Run manual tests
 
-Modify `cmd/gosip/main.go` to include required scenarios and run:
+Modify `cmd/test/main.go` to include required scenarios and run:
 
 ```bash
-go run cmd/gosip/main.go
+go run ./cmd/test
+```
+
+Optionally, you can provide a strategy to use with a corresponding flag:
+
+```bash
+go run ./cmd/test -strategy adfs
 ```
 
 ### Run CI tests
