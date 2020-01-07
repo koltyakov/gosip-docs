@@ -37,6 +37,7 @@
 * [Recycle Bin](samples/recycle-bin.md)
 * [Feature management](samples/feature-management.md)
 * [Advanced item requests](samples/advanced-item-requests.md)
+* [Unmarshaling responses](samples/unmarshaling-responses.md)
 
 ## Utilities <a id="utilits"></a>
 
