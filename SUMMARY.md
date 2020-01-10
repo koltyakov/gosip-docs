@@ -15,6 +15,7 @@
   * [TMG Auth](auth/strategies/tmg.md)
 * [Custom Auth](auth/custom-auth/README.md)
   * [Azure Device Flow](auth/custom-auth/azure-device-flow.md)
+  * [Alternative NTLM](auth/custom-auth/alternative-ntlm.md)
 
 ## SharePoint client <a id="api"></a>
 
