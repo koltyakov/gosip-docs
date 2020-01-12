@@ -13,6 +13,7 @@
   * [ADFS Auth](auth/strategies/adfs.md)
   * [FBA Auth](auth/strategies/fba.md)
   * [TMG Auth](auth/strategies/tmg.md)
+  * [Anonymous](auth/strategies/anonymous.md)
 * [Custom Auth](auth/custom-auth/README.md)
   * [Azure Device Flow](auth/custom-auth/azure-device-flow.md)
   * [On-Demand Auth](auth/custom-auth/on-demand.md)
