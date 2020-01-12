@@ -28,7 +28,7 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 ### Honorable mentions
 
-Within experimental in the [sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) these deserves mentioning:
+Within experimental in the [sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) these deserve mentioning:
 
 {% page-ref page="../custom-auth/azure-device-flow.md" %}
 
