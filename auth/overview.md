@@ -4,9 +4,9 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 # Overview
 
-### Authentication strategies
+## Authentication strategies
 
-Auth strategy should be selected corresponding to your SharePoint environment and its configuration.
+Auth strategy should be selected correspondin to your SharePoint environment and its configuration.
 
 Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{strategy}` stands for a strategy auth package.
 
@@ -21,11 +21,7 @@ Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{st
 
 JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
 
-### Additional strategies
-
-Gosip supports [custom](custom-auth/) \(ad hoc\) strategies. Some worthy are boiled in [the Sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) to be added later on to the main package in a case of the demand.
-
-### Secrets encoding
+## Secrets encoding
 
 When storing credential in local `private.json` files, which can be handy in local development scenarios, we strongly recommend to encode secrets such as `password` or `clientSecret` using [cpass](../utilits/cpass.md). Cpass converts a secret to an encrypted representation which can only be decrypted on the same machine where it was generated. This minimize incidental leaks, i.e. with git commits.
 
