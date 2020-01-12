@@ -64,7 +64,7 @@ By implementing AuthCnfg struct and gosip.AuthCnfg interface any custom authenti
 
 {% page-ref page="azure-device-flow.md" %}
 
+{% page-ref page="on-demand-auth.md" %}
+
 {% page-ref page="alternative-ntlm.md" %}
-
-
 
