@@ -29,9 +29,6 @@ The implementation is pretty straightforward and follows the principles describe
 * App permissions
   * Azure Service Management :: user\_impersonation
   * SharePoint :: based on your application requirements
-* Manifest
-  * oauth2AllowIdTokenImplicitFlow - true
-  * oauth2AllowImplicitFlow - true
 * etc. based on application needs
 
 ### Auth configuration and usage
@@ -78,4 +75,8 @@ and enter the code CL25ZF5N7 to authenticate.
 ```
 
 After opening the link, providing device code and authenticating in browser the app is ready for communication with your SharePoint site.
+
+The strategy caches auth token in the context of the AAD ClientID. As a result, you won't see the sign in message. If it's not the desired behavior `.CleanTokenCache()` method can be called to clean the local cache.
+
+Note, that the technique is mostly applicable when user interaction is assumed. Usage of that auth approach in the headless scenarios is not the best as it can lead "stuck" application if no-one expects sign in interaction.
 
