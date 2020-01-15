@@ -18,6 +18,7 @@
   * [Azure Device Flow](auth/custom-auth/azure-device-flow.md)
   * [On-Demand Auth](auth/custom-auth/on-demand.md)
   * [Alternative NTLM](auth/custom-auth/alternative-ntlm.md)
+  * [Dynamic auth](auth/custom-auth/dynamic-auth.md)
 
 ## SharePoint client <a id="api"></a>
 
