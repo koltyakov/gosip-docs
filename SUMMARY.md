@@ -29,6 +29,7 @@
 
 * [Basic CRUD](samples/basic-crud.md)
 * [Documents](samples/documents.md)
+* [Chunk upload](samples/chunk-upload.md)
 * [Permissions](samples/permissions.md)
 * [Groups & Users](samples/groups-and-users.md)
 * [Search API](samples/search-api.md)

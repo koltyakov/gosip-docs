@@ -99,6 +99,8 @@ if err != nil {
 fmt.Printf("New file URL: %s\n", fileAddResp.Data().ServerRelativeURL)
 ```
 
+[More details](chunk-upload.md).
+
 ### Downloading files
 
 ```go
