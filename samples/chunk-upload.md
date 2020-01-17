@@ -53,12 +53,26 @@ Defaults are: `Overwrite` is true and `ChunkSize` equals to 10485760 bytes.
 `Progress` callback allows not only trigger a progress logic, for example upload percentage update, but also to cancel an upload. To cancel an upload the progress callback should return `false`.
 
 ```go
+filePath := "/path/to/large/file.zip"
+
+file, err := os.Open(filePath)
+if err != nil {
+	log.Fatalf("unable to read a file: %v\n", err)
+}
+defer file.Close()
+
+info, _ := os.Stat(filePath)
+
 options := &api.AddChunkedOptions{
 	Overwrite: false,
 	ChunkSize: 5 * 1024 * 1024,
 	Progress: func(data *api.FileUploadProgressData) bool {
-		fmt.Printf("Block %d, sent %d bytes\n", data.BlockNumber, data.FileOffset)
-		return true
+		fmt.Printf(
+			"Block %d, sent %d%%\n",
+			data.BlockNumber,
+			100*data.FileOffset/fi.Size(),
+		)
+		return true // to cancel an upload on some external condition, return "false"
 	},
 }
 
