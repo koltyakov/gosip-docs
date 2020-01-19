@@ -4,18 +4,14 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 # Introduction
 
-![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/gosip?branchName=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip)
-[![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)](https://codecov.io/gh/koltyakov/gosip)
-[![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE)
-[![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
+![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/gosip?branchName=master) [![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip) [![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)](https://codecov.io/gh/koltyakov/gosip) [![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE) [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
 ![](.gitbook/assets/gosip.png)
 
 ## Main features
 
 * Unattended authentication using different strategies.
-* Fluent API syntax for SharePoint object model.
+* [Fluent API](api/fluent.md) syntax for SharePoint object model.
 * Simplified API consumption \(REST, CSOM, SOAP, etc.\).
 * SharePoint-aware embedded features \(retries, header presets, error handling\).
 
@@ -27,17 +23,17 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 ### Supported auth strategies
 
 * SharePoint On-Premises 2019/2016/2013:
-  * User credentials \(NTLM\)
-  * ADFS user credentials \(ADFS, WAP -&gt; Basic/NTLM, WAP -&gt; ADFS\)
-  * Behind a reverse proxy \(Forefront TMG, WAP -&gt; Basic/NTLM, WAP -&gt; ADFS\)
-  * Form-based authentication \(FBA\)
-  * On-Demand auth
+  * [User credentials](auth/strategies/ntlm.md) \(NTLM\)
+  * [ADFS user credentials](auth/strategies/adfs.md) \(ADFS, WAP -&gt; Basic/NTLM, WAP -&gt; ADFS\)
+  * Behind a reverse proxy \([Forefront TMG](auth/strategies/tmg.md), [WAP -&gt; Basic/NTLM](auth/strategies/adfs.md), [WAP -&gt; ADFS](auth/strategies/adfs.md)\)
+  * [Form-based authentication](auth/strategies/fba.md) \(FBA\)
+  * [On-Demand authentication](auth/custom-auth/on-demand.md)
 * SharePoint Online:
-  * SAML based with user credentials
-  * Add-In only permissions
-  * ADFS user credentials \(automatically detects in SAML strategy\)
-  * Azure Device flow
-  * On-Demand auth
+  * [SAML](auth/strategies/saml.md) based with user credentials
+  * [Add-In only](auth/strategies/addin.md) permissions
+  * ADFS user credentials \(automatically detects in [SAML](auth/strategies/saml.md) strategy\)
+  * [Azure Device flow](auth/custom-auth/azure-device-flow.md)
+  * [On-Demand authentication](auth/custom-auth/on-demand.md)
 
 ## Installation
 
@@ -61,7 +57,7 @@ import (
 )
 ```
 
-2. Initiate authentication object.
+1. Initiate authentication object.
 
 ```go
 auth := &strategy.AuthCnfg{
@@ -86,7 +82,7 @@ if err != nil {
 }
 ```
 
-3. Bind auth client with Fluent API.
+1. Bind auth client with Fluent API.
 
 ```go
 client := &gosip.SPClient{AuthCnfg: auth}
@@ -206,13 +202,13 @@ func main() {
     }
 
     // sp.Post(endpoint, []byte(body), nil) // generic POST
-    
+
     // generic DELETE helper crafts "X-Http-Method"="DELETE" header
     // sp.Delete(endpoint, nil)
-    
+
     // generic UPDATE helper crafts "X-Http-Method"="MERGE" header
     // sp.Update(endpoint, nil)
-    
+
     // CSOM helper (client.svc/ProcessQuery)
     // sp.ProcessQuery(endpoint, []byte(body))
 
