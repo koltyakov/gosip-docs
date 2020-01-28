@@ -10,7 +10,7 @@ Gosip HTTP client is preconfigured with retry policies so different kinds of fai
 
 The default policies are:
 
-| Status code | Retries | Description |
+| StatusCode | Retries | Description |
 | :--- | :--- | :--- |
 | 401 | 5 | Unauthorized. A retry might help if apply authentication restores an overdue token or handshake. |
 | 429 | 5 | Too many requests throttling error response. In the case of API throttling \(relevant for SharePoint Online\), retrying is also aware of Retry-After header for delay detection. |
