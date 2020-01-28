@@ -25,6 +25,7 @@
 * [HTTP Client](api/http-client.md)
 * [Fluent API](api/fluent.md)
 * [Hooks](api/hooks.md)
+* [Retries](api/retries.md)
 
 ## Samples
 
