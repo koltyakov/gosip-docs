@@ -40,7 +40,7 @@ func main() {
         log.Fatalf("%v\n", err)
     }
 
-    // spClient.Post(endpoint, []byte(body), nil) // generic POST
+    // spClient.Post(endpoint, body, nil) // generic POST
     
     // generic DELETE helper crafts "X-Http-Method"="DELETE" header
     // spClient.Delete(endpoint, nil)
@@ -49,7 +49,7 @@ func main() {
     // spClient.Update(endpoint, nil)
     
     // CSOM helper (client.svc/ProcessQuery)
-    // spClient.ProcessQuery(endpoint, []byte(body))
+    // spClient.ProcessQuery(endpoint, body)
 
     fmt.Printf("response: %s\n", data)
 }
