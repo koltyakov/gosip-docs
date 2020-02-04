@@ -39,7 +39,7 @@ var authCnfg gosip.AuthCnfg
 	RetryPolicies: map[int]int{
 		// merged with default policies
 		500: 2,  // overwrites default
-		503: 10, // overwrites default
+		503: 5,  // overwrites default
 		401: 0,  // disables default
 	},
 }
