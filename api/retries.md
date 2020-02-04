@@ -15,7 +15,7 @@ The default policies are:
 | 401 | 5 | Unauthorized. A retry might help if apply authentication restores an overdue token or handshake. |
 | 429 | 5 | Too many requests throttling error response. In the case of API throttling \(relevant for SharePoint Online\), retrying is also aware of Retry-After header for delay detection. |
 | 500 | 1 | Internal Server Error. Rarely can be restored. |
-| 503 | 5 | Service Unavailable. Fixes intermittent issues with the service. |
+| 503 | 10 | Service Unavailable. Fixes intermittent issues with the service. |
 | 504 | 5 | Gateway Timeout Error. |
 
 Retries' delay increases with each attempt: 200ms, 400ms, 800ms, 1.6s, 3.2s, and so on using the following progression formula:
