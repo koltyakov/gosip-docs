@@ -16,42 +16,42 @@ However, dealing at low-level, means you should know SharePoint API rather well 
 package main
 
 import (
-    "fmt"
-    "log"
+	"fmt"
+	"log"
 
-    "github.com/koltyakov/gosip"
-    "github.com/koltyakov/gosip/api"
-    strategy "github.com/koltyakov/gosip/auth/ntlm"
+	"github.com/koltyakov/gosip"
+	"github.com/koltyakov/gosip/api"
+	strategy "github.com/koltyakov/gosip/auth/ntlm"
 )
 
 func main() {
-    auth := &strategy.AuthCnfg{}
-    configPath := "./config/private.json"
-    if err := auth.ReadConfig(configPath); err != nil {
-        log.Fatalf("unable to get config: %v\n", err)
-    }
+	auth := &strategy.AuthCnfg{}
+	configPath := "./config/private.json"
+	if err := auth.ReadConfig(configPath); err != nil {
+		log.Fatalf("unable to get config: %v\n", err)
+	}
 
-    spClient := api.NewHTTPClient(&gosip.SPClient{AuthCnfg: auth})
+	spClient := api.NewHTTPClient(&gosip.SPClient{AuthCnfg: auth})
 
-    endpoint := auth.GetSiteURL() + "/_api/web?$select=Title"
+	endpoint := auth.GetSiteURL() + "/_api/web?$select=Title"
 
-    data, err := spClient.Get(endpoint, nil)
-    if err != nil {
-        log.Fatalf("%v\n", err)
-    }
+	data, err := spClient.Get(endpoint, nil)
+	if err != nil {
+			log.Fatalf("%v\n", err)
+	}
 
-    // spClient.Post(endpoint, []byte(body), nil) // generic POST
-    
-    // generic DELETE helper crafts "X-Http-Method"="DELETE" header
-    // spClient.Delete(endpoint, nil)
-    
-    // generic UPDATE helper crafts "X-Http-Method"="MERGE" header
-    // spClient.Update(endpoint, nil)
-    
-    // CSOM helper (client.svc/ProcessQuery)
-    // spClient.ProcessQuery(endpoint, []byte(body))
+	// spClient.Post(endpoint, body, nil) // generic POST
 
-    fmt.Printf("response: %s\n", data)
+	// generic DELETE helper crafts "X-Http-Method"="DELETE" header
+	// spClient.Delete(endpoint, nil)
+
+	// generic UPDATE helper crafts "X-Http-Method"="MERGE" header
+	// spClient.Update(endpoint, body, nil)
+
+	// CSOM helper (client.svc/ProcessQuery)
+	// spClient.ProcessQuery(endpoint, body, nil)
+
+	fmt.Printf("response: %s\n", data)
 }
 ```
 
@@ -94,8 +94,8 @@ var req *http.Request
 
 resp, err := client.Execute(req)
 if err != nil {
-    fmt.Printf("Unable to request api: %v", err)
-    return
+  fmt.Printf("Unable to request api: %v", err)
+  return
 }
 ```
 

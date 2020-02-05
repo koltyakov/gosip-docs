@@ -26,6 +26,7 @@
 * [Fluent API](api/fluent.md)
 * [Hooks](api/hooks.md)
 * [Retries](api/retries.md)
+* [Context](api/context.md)
 
 ## Samples
 
