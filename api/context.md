@@ -1,5 +1,5 @@
 ---
-description: Using Go context
+description: Using Go context with SP client
 ---
 
 # Context
