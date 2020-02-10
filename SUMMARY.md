@@ -46,7 +46,10 @@
 * [Feature management](samples/feature-management.md)
 * [Advanced item requests](samples/advanced-item-requests.md)
 * [Unmarshaling responses](samples/unmarshaling-responses.md)
-* [Sandbox](sandbox.md)
+
+## Sandbox <a id="sandbox-1"></a>
+
+* [Overview](sandbox-1/sandbox.md)
 
 ## Utilities <a id="utilits"></a>
 

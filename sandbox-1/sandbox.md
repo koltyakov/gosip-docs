@@ -2,7 +2,7 @@
 description: 'Gosip sandbox area: samples, experiments & suggestions'
 ---
 
-# Sandbox
+# Overview
 
 Have a use case but no idea how to implement? Ask in [issues section](https://github.com/koltyakov/gosip-sandbox/issues) and we'll reach you with suggestions or sample to start with.
 
