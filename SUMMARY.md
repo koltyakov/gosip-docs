@@ -47,9 +47,9 @@
 * [Advanced item requests](samples/advanced-item-requests.md)
 * [Unmarshaling responses](samples/unmarshaling-responses.md)
 
-## Sandbox <a id="sandbox-1"></a>
+## Sandbox
 
-* [Overview](sandbox-1/sandbox.md)
+* [Overview](sandbox/overview.md)
 
 ## Utilities <a id="utilits"></a>
 
