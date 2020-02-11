@@ -78,3 +78,9 @@ SPAUTH_ENVCODE=spo SPAPI_HEAVY_TESTS=true go test ./api/... -v -race -count=1
 
 Check [Codecov](https://codecov.io/gh/koltyakov/gosip).
 
+| Master | Dev |
+| :--- | :--- |
+|  |  |
+
+
+
