@@ -80,7 +80,4 @@ Check [Codecov](https://codecov.io/gh/koltyakov/gosip).
 
 | Master | Dev |
 | :--- | :--- |
-|  |  |
-
-
-
+| ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg) | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/dev/graph/badge.svg) |
