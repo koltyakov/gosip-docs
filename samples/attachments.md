@@ -55,7 +55,7 @@ Adding attachments is almost identical to [adding documents](documents.md#adding
 list := sp.Web().GetList("Lists/MyList")
 item := list.Items().GetByID(1)
 
-content := strings.NewReader("Get content in a usual Go way you like")
+content := []byte("Get content in a usual Go way you like")
 
 item.Attachments().GetByName("MyAttachment.txt").Delete()
 

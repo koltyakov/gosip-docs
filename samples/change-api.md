@@ -17,14 +17,14 @@ Change tokens received from a specific entity type \(e.g. Site\) can't be used w
 ```go
 siteChangeToken, err := sp.Site().Changes().GetCurrentToken()
 if err != nil {
-  log.Fatal(err)
+    log.Fatal(err)
 }
 
 fmt.Printf("Site change token: %s\n", siteChangeToken)
 
 webChangeToken, err := sp.Web().Changes().GetCurrentToken()
 if err != nil {
-  log.Fatal(err)
+    log.Fatal(err)
 }
 
 fmt.Printf("Web change token: %s\n", webChangeToken)
@@ -32,7 +32,7 @@ fmt.Printf("Web change token: %s\n", webChangeToken)
 list := sp.Web().GetList("Lists/MyList")
 listChangeToken, err := list.Changes().GetCurrentToken()
 if err != nil {
-  log.Fatal(err)
+    log.Fatal(err)
 }
 
 fmt.Printf("List change token: %s\n", listChangeToken)
@@ -56,17 +56,17 @@ list.Items().Add([]byte(`{"Title":"New item"}`))
 // error handling is omitted -- adding a dummy item to receive changes result
 
 changes, err := list.Changes().GetChanges(&api.ChangeQuery{
-  ChangeTokenStart: listChangeToken,
-  List:             true,
-  Item:             true,
-  Add:              true,
+    ChangeTokenStart: listChangeToken,
+    List:             true,
+    Item:             true,
+    Add:              true,
 })
 if err != nil {
-  log.Fatal(err)
+    log.Fatal(err)
 }
 
-for _, change := range changes.Data() {
-  fmt.Printf("%+v\n", change)
+for _, change := range changes {
+    fmt.Printf("%+v\n", change)
 }
 ```
 
@@ -76,19 +76,19 @@ Change into struct contains the following properties:
 
 ```go
 type ChangeInfo struct {
-  ChangeToken       *StringValue
-  ChangeType        int
-  Editor            string
-  EditorEmailHint   string
-  ItemID            int
-  ListID            string
-  ServerRelativeURL string
-  SharedByUser      string
-  SharedWithUsers   string
-  SiteID            string
-  Time              time.Time
-  UniqueID          string
-  WebID             string
+    ChangeToken       *StringValue
+    ChangeType        int
+    Editor            string
+    EditorEmailHint   string
+    ItemID            int
+    ListID            string
+    ServerRelativeURL string
+    SharedByUser      string
+    SharedWithUsers   string
+    SiteID            string
+    Time              time.Time
+    UniqueID          string
+    WebID             string
 }
 ```
 
@@ -136,21 +136,6 @@ When getting the changes the API requires some clarifications about what exactly
 | User | Specifies whether changes to users are included in the query |
 | View | Specifies whether changes to views are included in the query |
 | Web | Specifies whether changes to Web sites are included in the query |
-
-### Pagination
-
-Sometimes it can be more than 5000 changes since a provided token. Changes API doesn't provide pagination as items collection does, however, pagination can be easily achieved by jumping between different change tokens. E.g., last change item's token can be used as a start token to get the "next page". This approach is used in `GetNextPage`:
-
-```go
-changesFirstPage, _ := list.Changes().Top(100).GetChanges(&ChangeQuery{
-	ChangeTokenStart: token,
-	List:             true,
-	Item:             true,
-	Add:              true,
-})
-
-changesSecondPage, _ := changesFirstPage.GetNextPage()
-```
 
 ### Summary
 

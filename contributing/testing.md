@@ -36,8 +36,8 @@ Create auth credentials store files in `./config/integration` folder for corresp
 * private.2013.json // 2013 has its nuances with OData mod and not supported methods
 
 ```bash
-SPAUTH_ENVCODE=spo go test ./api/... -v -count=1
-SPAUTH_ENVCODE=2013 go test ./api/... -v -count=1
+SPAUTH_ENVCODE=spo go test ./api/... -v -race -count=1
+SPAUTH_ENVCODE=2013 go test ./api/... -v -race -count=1
 ```
 
 **Environment variables**
@@ -71,6 +71,10 @@ Configure environment variables:
 
 ```bash
 go test ./... -v -race -count=1
-SPAUTH_ENVCODE=spo go test ./api/... -v -count=1
+SPAUTH_ENVCODE=spo SPAPI_HEAVY_TESTS=true go test ./api/... -v -race -count=1
 ```
+
+### Test coverage
+
+Check [Codecov](https://codecov.io/gh/koltyakov/gosip).
 
