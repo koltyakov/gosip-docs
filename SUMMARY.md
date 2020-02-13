@@ -45,6 +45,7 @@
 * [Recycle Bin](samples/recycle-bin.md)
 * [Feature management](samples/feature-management.md)
 * [Advanced item requests](samples/advanced-item-requests.md)
+* [Advanced add/update](samples/advanced-add-update.md)
 * [Unmarshaling responses](samples/unmarshaling-responses.md)
 
 ## Sandbox
