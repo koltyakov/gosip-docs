@@ -70,7 +70,7 @@ if _, err := list.Items().GetByID(3).UpdateValidate(data, options); err != nil {
 
 Form values passed to the methods should stand for an array of `{ FieldName: "", FieldValue: "" }` objects where field value is a string of specific format depending on field's data type.
 
-Gosip simplifies this payload operating with map of strings. In payload, map key should stand for a valid FieldName, a value, obviously, is the one mapped to FieldValue.
+Gosip simplifies this payload operating with map of strings. In payload, map key should stand for a valid `FieldName`, a value, obviously, is the one mapped to `FieldValue`.
 
 The fingerprints for the data types are following:
 
