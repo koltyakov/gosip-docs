@@ -52,3 +52,19 @@ go run ./ -secret "MyP@s$word"
 
 When use result token/hash as a secret in `private.json` file\(s\).
 
+### From sandbox
+
+Another option would be installing `cpass` from sandbox:
+
+```bash
+go install github.com/koltyakov/gosip-sandbox/samples/cpass
+```
+
+And using `cpass` as a CLI, with no parameters the secret can be provided in a masked form without keeping it in console history:
+
+```bash
+$ cpass
+Password to encode: ********
+poXx8zaJM6gLazPCtv4rMVLoTuzX_1BvYJlMAQqK
+```
+
