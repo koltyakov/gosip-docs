@@ -17,8 +17,8 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 ### Supported SharePoint versions
 
-* SharePoint Online \(SPO\)
-* On-Premises \(2019/2016/2013\)
+* SharePoint Online \(SPO\).
+* On-Premises \(2019/2016/2013\).
 
 ### Supported auth strategies
 

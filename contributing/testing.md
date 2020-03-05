@@ -6,7 +6,7 @@ description: "\U0001F6A6Gosip automated testing"
 
 In a clone or fork.
 
-### Authentication testing
+## Authentication testing
 
 Create auth credentials store files in `./config` folder for corresponding strategies:
 
@@ -20,7 +20,7 @@ Create auth credentials store files in `./config` folder for corresponding strat
 * [private.spo-user.json](../auth/strategies/saml.md#json)
 * [private.spo-adfs.json](../auth/strategies/adfs.md#sharepoint-online-configuration)
 
-See [samples](./config/samples).
+See [samples](https://github.com/koltyakov/gosip-docs/tree/3818da275a317ce807a5dbe14eade1086e60cc7f/contributing/config/samples/README.md).
 
 ```bash
 go test ./... -v -race -count=1
@@ -28,7 +28,7 @@ go test ./... -v -race -count=1
 
 Not provided auth configs and therefore strategies are ignored and not skipped in tests.
 
-### API integration tests
+## API integration tests
 
 Create auth credentials store files in `./config/integration` folder for corresponding environments:
 
@@ -40,12 +40,20 @@ SPAUTH_ENVCODE=spo go test ./api/... -v -race -count=1
 SPAUTH_ENVCODE=2013 go test ./api/... -v -race -count=1
 ```
 
+API integration tests are mostly targeted to SharePoint Online and not regularly processed on the legacy versions of the platform so you can face some test exceptions which still should be escaped with `t.Skip` and `envCode != "spo"` condition:
+
+```go
+if envCode != "spo" {
+  t.Skip("is not supported with old SharePoint versions")
+}
+```
+
 **Environment variables**
 
 * `SPAUTH_ENVCODE=code` environment variable switches target environments. `spo` is a default one.
 * `SPAPI_HEAVY_TESTS=true` turns on "heavy" methods, e.g. web creation.
 
-### Run manual tests
+## Run manual tests
 
 Modify `cmd/test/main.go` to include required scenarios and run:
 
@@ -59,7 +67,7 @@ Optionally, you can provide a strategy to use with a corresponding flag:
 go run ./cmd/test -strategy adfs
 ```
 
-### Run CI tests
+## Run CI tests
 
 Configure environment variables:
 
@@ -74,11 +82,14 @@ go test ./... -v -race -count=1
 SPAUTH_ENVCODE=spo SPAPI_HEAVY_TESTS=true go test ./api/... -v -race -count=1
 ```
 
-### Test coverage
+## Test coverage
 
 Check [Codecov](https://codecov.io/gh/koltyakov/gosip).
 
 | Branch | Coverage |
-| :----- | :------- |
-| Master | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)
-| Dev    | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/dev/graph/badge.svg)
+| :--- | :--- |
+| Master | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg) |
+| Dev | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/dev/graph/badge.svg) |
+
+We are targeted to keep code coverage higher than 80% for API and Auth methods altogether.
+

@@ -56,6 +56,7 @@
 
 * [Headers presets](utilits/headers-presets.md)
 * [Cpass](utilits/cpass.md)
+* [Compatibility matrix](utilits/compatibility-matrix.md)
 
 ## Contributing
 
