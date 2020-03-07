@@ -218,7 +218,7 @@ func main() {
 
 ### Low-level HTTP-client usage
 
-Low-lever SharePoint-aware HTTP client from `github.com/koltyakov/gosip` package for custom or not covered with a Fluent API client endpoints with granular control for HTTP request, response, and http.Client parameters. Used internally but almost never required in a consumer code.
+Low-lever SharePoint-aware HTTP client from `github.com/koltyakov/gosip` package for custom or not covered with a Fluent API client endpoints with granular control for HTTP request, response, and `http.Client` parameters. Used internally but almost never required in a consumer code.
 
 ```go
 client := &gosip.SPClient{AuthCnfg: auth}
@@ -234,7 +234,7 @@ if err != nil {
 }
 ```
 
-SPClient has `Execute` method which is a wrapper function injecting SharePoint authentication and ending up calling http.Client's `Do` method.
+SPClient has `Execute` method which is a wrapper function injecting SharePoint authentication and ending up calling `http.Client`'s `Do` method.
 
 ## Reference
 
