@@ -10,7 +10,7 @@ Auth strategy should be selected corresponding to your SharePoint environment an
 
 Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{strategy}` stands for a strategy auth package.
 
-| /{`strategy`} | SPO | On-Prem | Credentials sample\(s\) |
+| /strategy | SPO | On-Prem | Credentials sample\(s\) |
 | :--- | :--- | :--- | :--- |
 | `/saml` | ✅ | ❌ | [sample](strategies/addin.md#json) |
 | `/addin` | ✅ | ❌ | [sample](strategies/addin.md#json) |
