@@ -139,7 +139,7 @@ When getting the changes the API requires some clarifications about what exactly
 
 ### Pagination
 
-Sometimes it can be more than 5000 changes since a provided token. Changes API doesn't provide pagination as items collection does, however, pagination can be easily achieved by jumping between different change tokens. E.g., last change item's token can be used as a start token to get the "next page". This approach is used in `GetNextPage`:
+Sometimes it can be lots of changes since a provided token. Gosip implements pagination helper using "jumping" between different change tokens under the hood. When last change item's token is used as a start token to get the "next page". This approach is used in `GetNextPage`:
 
 ```go
 changesFirstPage, _ := list.Changes().Top(100).GetChanges(&ChangeQuery{
