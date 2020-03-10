@@ -26,5 +26,5 @@ sp := api.NewSP(client).Conf(api.HeadersPresets.Minimalmetadata)
 // api.HeadersPresets.Nometadata
 ```
 
-Along with OData modes, these presets define language header `"Accept-Language": "en-US,en;q=0.9"` which forces English messages in responses if English is installed on a site.
+Along with OData modes, these presets define language header `"Accept-Language": "en-US,en;q=0.9"` which forces English messages in responses if English is installed on a site. Which is handy for dev and debugging purposes as sometimes a local non-latin language can be escaped to an unreadable form making it uncomfortable detecting what was wrong in logs.
 
