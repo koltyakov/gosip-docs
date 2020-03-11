@@ -15,7 +15,7 @@ Have no particular code to share but a description of how you use the library or
 | Sample | Description |
 | :--- | :--- |
 | [Dynamic authentication](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/dynauth) | Shows a simple way of importing potentially demanded strategies and selecting one in runtime based on logic, CLI flags in the case of the sample. |
-| [Consumption with PowerShell](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/posh) | Shows how to retrieve auth tokens to use in a PowerShell script \(is relevant for Edge auth scenarios\). |
+| [Consumption with PowerShell](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/posh) | Shows how to retrieve auth tokens to use in a PowerShell script \(is relevant for Edge auth scenarios, e.g. SharePoint behind WAP perimeter\). |
 | [Dev API Proxy](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/proxy) | Shows how to expose SharePoint API as an anonymous endpoint for a dev server. |
 | [Files upload \(sync\)](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/sync) | Is a syncronization sample which provides a sigle time assets upload or/and local file system watch mode. Provides in times faster upload when any other known alternative. |
 | [Unmarshaling API responses](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/unmarshaling) | Basic unmarhsaling \(response parsing\) sample. |
