@@ -51,9 +51,9 @@ Let's assume it's, SharePoint Online and Add-In Only permissions. Then `strategy
 package main
 
 import (
-    "github.com/koltyakov/gosip"
-    "github.com/koltyakov/gosip/api"
-    strategy "github.com/koltyakov/gosip/auth/addin"
+  "github.com/koltyakov/gosip"
+  "github.com/koltyakov/gosip/api"
+  strategy "github.com/koltyakov/gosip/auth/addin"
 )
 ```
 
@@ -61,9 +61,9 @@ import (
 
 ```go
 auth := &strategy.AuthCnfg{
-    SiteURL:      os.Getenv("SPAUTH_SITEURL"),
-    ClientID:     os.Getenv("SPAUTH_CLIENTID"),
-    ClientSecret: os.Getenv("SPAUTH_CLIENTSECRET"),
+  SiteURL:      os.Getenv("SPAUTH_SITEURL"),
+  ClientID:     os.Getenv("SPAUTH_CLIENTID"),
+  ClientSecret: os.Getenv("SPAUTH_CLIENTSECRET"),
 }
 ```
 
@@ -77,8 +77,8 @@ auth := &strategy.AuthCnfg{}
 
 err := auth.ReadConfig(configPath)
 if err != nil {
-    fmt.Printf("Unable to get config: %v\n", err)
-    return
+  fmt.Printf("Unable to get config: %v\n", err)
+  return
 }
 ```
 
@@ -91,7 +91,7 @@ sp := api.NewSP(client)
 
 res, err := sp.Web().Select("Title").Get()
 if err != nil {
-    fmt.Println(err)
+  fmt.Println(err)
 }
 
 fmt.Printf("%s\n", res.Data().Title)
@@ -107,64 +107,64 @@ Provides a simple way of constructing API endpoint calls with IntelliSense and c
 package main
 
 import (
-    "encoding/json"
-    "fmt"
-    "log"
+  "encoding/json"
+  "fmt"
+  "log"
 
-    "github.com/koltyakov/gosip"
-    "github.com/koltyakov/gosip/api"
-    strategy "github.com/koltyakov/gosip/auth/addin"
+  "github.com/koltyakov/gosip"
+  "github.com/koltyakov/gosip/api"
+  strategy "github.com/koltyakov/gosip/auth/addin"
 )
 
 func main() {
-    // Getting auth params and client
-    client, err := getAuthClient()
-    if err != nil {
-        log.Fatalln(err)
-    }
+  // Getting auth params and client
+  client, err := getAuthClient()
+  if err != nil {
+    log.Fatalln(err)
+  }
 
-    // Binding SharePoint API
-    sp := api.NewSP(client)
+  // Binding SharePoint API
+  sp := api.NewSP(client)
 
-    // Custom headers
-    headers := map[string]string{
-        "Accept": "application/json;odata=minimalmetadata",
-        "Accept-Language": "de-DE,de;q=0.9",
-    }
-    config := &api.RequestConfig{Headers: headers}
+  // Custom headers
+  headers := map[string]string{
+    "Accept": "application/json;odata=minimalmetadata",
+    "Accept-Language": "de-DE,de;q=0.9",
+  }
+  config := &api.RequestConfig{Headers: headers}
 
-    // Chainable request sample
-    data, err := sp.Conf(config).Web().Lists().Select("Id,Title").Get()
-    if err != nil {
-        log.Fatalln(err)
-    }
+  // Chainable request sample
+  data, err := sp.Conf(config).Web().Lists().Select("Id,Title").Get()
+  if err != nil {
+    log.Fatalln(err)
+  }
 
-    // Response object unmarshalling
-    // (struct depends on OData mode and API method)
-    res := &struct {
-        Value []struct {
-            ID    string `json:"Id"`
-            Title string `json:"Title"`
-        } `json:"value"`
-    }{}
+  // Response object unmarshalling
+  // (struct depends on OData mode and API method)
+  res := &struct {
+    Value []struct {
+      ID    string `json:"Id"`
+      Title string `json:"Title"`
+    } `json:"value"`
+  }{}
 
-    if err := json.Unmarshal(data, &res); err != nil {
-        log.Fatalf("unable to parse the response: %v", err)
-    }
+  if err := json.Unmarshal(data, &res); err != nil {
+    log.Fatalf("unable to parse the response: %v", err)
+  }
 
-    for _, list := range res.Value {
-        fmt.Printf("%+v\n", list)
-    }
+  for _, list := range res.Value {
+    fmt.Printf("%+v\n", list)
+  }
 
 }
 
 func getAuthClient() (*gosip.SPClient, error) {
-    configPath := "./config/private.spo-addin.json" // <- file with creds
-    auth := &strategy.AuthCnfg{}
-    if err := auth.ReadConfig(configPath); err != nil {
-        return nil, fmt.Errorf("unable to get config: %v", err)
-    }
-    return &gosip.SPClient{AuthCnfg: auth}, nil
+  configPath := "./config/private.spo-addin.json" // <- file with creds
+  auth := &strategy.AuthCnfg{}
+  if err := auth.ReadConfig(configPath); err != nil {
+    return nil, fmt.Errorf("unable to get config: %v", err)
+  }
+  return &gosip.SPClient{AuthCnfg: auth}, nil
 }
 ```
 
@@ -176,43 +176,43 @@ Provides generic GET/POST helpers for REST operations, reducing amount of `http.
 package main
 
 import (
-    "fmt"
-    "log"
+  "fmt"
+  "log"
 
-    "github.com/koltyakov/gosip"
-    "github.com/koltyakov/gosip/api"
-    strategy "github.com/koltyakov/gosip/auth/ntlm"
+  "github.com/koltyakov/gosip"
+  "github.com/koltyakov/gosip/api"
+  strategy "github.com/koltyakov/gosip/auth/ntlm"
 )
 
 func main() {
-    configPath := "./config/private.ntlm.json"
-    auth := &strategy.AuthCnfg{}
+  configPath := "./config/private.ntlm.json"
+  auth := &strategy.AuthCnfg{}
 
-    if err := auth.ReadConfig(configPath); err != nil {
-        log.Fatalf("unable to get config: %v\n", err)
-    }
+  if err := auth.ReadConfig(configPath); err != nil {
+    log.Fatalf("unable to get config: %v\n", err)
+  }
 
-    sp := api.NewHTTPClient(&gosip.SPClient{AuthCnfg: auth})
+  sp := api.NewHTTPClient(&gosip.SPClient{AuthCnfg: auth})
 
-    endpoint := auth.GetSiteURL() + "/_api/web?$select=Title"
+  endpoint := auth.GetSiteURL() + "/_api/web?$select=Title"
 
-    data, err := sp.Get(endpoint, nil)
-    if err != nil {
-        log.Fatalf("%v\n", err)
-    }
+  data, err := sp.Get(endpoint, nil)
+  if err != nil {
+    log.Fatalf("%v\n", err)
+  }
 
-    // sp.Post(endpoint, []byte(body), nil) // generic POST
+  // sp.Post(endpoint, []byte(body), nil) // generic POST
 
-    // generic DELETE helper crafts "X-Http-Method"="DELETE" header
-    // sp.Delete(endpoint, nil)
+  // generic DELETE helper crafts "X-Http-Method"="DELETE" header
+  // sp.Delete(endpoint, nil)
 
-    // generic UPDATE helper crafts "X-Http-Method"="MERGE" header
-    // sp.Update(endpoint, nil)
+  // generic UPDATE helper crafts "X-Http-Method"="MERGE" header
+  // sp.Update(endpoint, nil)
 
-    // CSOM helper (client.svc/ProcessQuery)
-    // sp.ProcessQuery(endpoint, []byte(body))
+  // CSOM helper (client.svc/ProcessQuery)
+  // sp.ProcessQuery(endpoint, []byte(body))
 
-    fmt.Printf("response: %s\n", data)
+  fmt.Printf("response: %s\n", data)
 }
 ```
 
@@ -229,8 +229,8 @@ var req *http.Request
 
 resp, err := client.Execute(req)
 if err != nil {
-    fmt.Printf("Unable to request api: %v", err)
-    return
+  fmt.Printf("Unable to request api: %v", err)
+  return
 }
 ```
 
