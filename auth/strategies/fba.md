@@ -8,13 +8,13 @@ description: Form-based authentication for SharePoint On-Premises
 
 ```go
 type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Username for SharePoint On-Prem,
-    // format depends in FBA settings, can include domain or doesn't
-    Username string `json:"username"`
-    // User password
-    Password string `json:"password"`
+  // SPSite or SPWeb URL, which is the context target for the API calls
+  SiteURL string `json:"siteUrl"`
+  // Username for SharePoint On-Prem,
+  // format depends in FBA settings, can include domain or doesn't
+  Username string `json:"username"`
+  // User password
+  Password string `json:"password"`
 }
 ```
 
@@ -44,7 +44,6 @@ import (
 )
 
 func main() {
-
 	// authCnfg := &strategy.AuthCnfg{
 	// 	SiteURL:  os.Getenv("SPAUTH_SITEURL"),
 	// 	Username: os.Getenv("SPAUTH_USERNAME"),
@@ -60,7 +59,6 @@ func main() {
 
 	client := &gosip.SPClient{AuthCnfg: authCnfg}
 	// use client in raw requests or bind it with Fluent API ...
-
 }
 ```
 

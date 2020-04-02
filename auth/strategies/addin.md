@@ -10,14 +10,14 @@ This type of authentication uses AddIn Only policy and OAuth bearer tokens for a
 
 ```go
 type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Client ID obtained when registering the AddIn
-    ClientID string `json:"clientId"`
-    // Client Secret obtained when registering the AddIn
-    ClientSecret string `json:"clientSecret"`
-    // Your SharePoint Online tenant ID (optional)
-    Realm string `json:"realm"`
+  // SPSite or SPWeb URL, which is the context target for the API calls
+  SiteURL string `json:"siteUrl"`
+  // Client ID obtained when registering the AddIn
+  ClientID string `json:"clientId"`
+  // Client Secret obtained when registering the AddIn
+  ClientSecret string `json:"clientSecret"`
+  // Your SharePoint Online tenant ID (optional)
+  Realm string `json:"realm"`
 }
 ```
 
@@ -51,7 +51,6 @@ import (
 )
 
 func main() {
-
 	// authCnfg := &strategy.AuthCnfg{
 	// 	SiteURL:      os.Getenv("SPAUTH_SITEURL"),
 	// 	ClientID:     os.Getenv("SPAUTH_CLIENTID"),
@@ -67,7 +66,6 @@ func main() {
 
 	client := &gosip.SPClient{AuthCnfg: authCnfg}
 	// use client in raw requests or bind it with Fluent API ...
-
 }
 ```
 

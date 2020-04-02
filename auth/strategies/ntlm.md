@@ -10,11 +10,11 @@ This type of authentication uses HTTP NTLM handshake in order to obtain authenti
 
 ```go
 type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL  string `json:"siteUrl"`
-    Domain   string `json:"domain"`   // AD domain name
-    Username string `json:"username"` // AD user name
-    Password string `json:"password"` // AD user password
+  // SPSite or SPWeb URL, which is the context target for the API calls
+  SiteURL  string `json:"siteUrl"`
+  Domain   string `json:"domain"`   // AD domain name
+  Username string `json:"username"` // AD user name
+  Password string `json:"password"` // AD user password
 }
 ```
 
@@ -57,7 +57,6 @@ import (
 )
 
 func main() {
-
 	// authCnfg := &strategy.AuthCnfg{
 	// 	SiteURL:  os.Getenv("SPAUTH_SITEURL"),
 	// 	Username: os.Getenv("SPAUTH_USERNAME"),
@@ -73,7 +72,6 @@ func main() {
 
 	client := &gosip.SPClient{AuthCnfg: authCnfg}
 	// use client in raw requests or bind it with Fluent API ...
-
 }
 ```
 

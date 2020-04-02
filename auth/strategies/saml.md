@@ -10,12 +10,12 @@ This authentication option uses Microsoft Online Security Token Service `https:/
 
 ```go
 type AuthCnfg struct {
-    // SPSite or SPWeb URL, which is the context target for the API calls
-    SiteURL string `json:"siteUrl"`
-    // Username for SharePoint Online, e.g. `[user]@[company].onmicrosoft.com`
-    Username string `json:"username"`
-    // User or App password
-    Password string `json:"password"`
+  // SPSite or SPWeb URL, which is the context target for the API calls
+  SiteURL string `json:"siteUrl"`
+  // Username for SharePoint Online, e.g. `[user]@[company].onmicrosoft.com`
+  Username string `json:"username"`
+  // User or App password
+  Password string `json:"password"`
 }
 ```
 
@@ -45,7 +45,6 @@ import (
 )
 
 func main() {
-
 	// authCnfg := &strategy.AuthCnfg{
 	// 	SiteURL:  os.Getenv("SPAUTH_SITEURL"),
 	// 	Username: os.Getenv("SPAUTH_USERNAME"),
@@ -61,7 +60,6 @@ func main() {
 
 	client := &gosip.SPClient{AuthCnfg: authCnfg}
 	// use client in raw requests or bind it with Fluent API ...
-
 }
 ```
 
