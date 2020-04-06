@@ -47,27 +47,27 @@ Hooks sample:
 client.Hooks = &gosip.HookHandlers{
 	OnError: func(e *gosip.HookEvent) {
 		fmt.Println("\n======= On Error ========")
-		fmt.Printf("URL: %s\n", e.Request.URL)
-		fmt.Printf("StatusCode: %d\n", e.StatusCode)
-		fmt.Printf("Error: %s\n", e.Error)
-		fmt.Printf("took %f seconds\n",
+		fmt.Printf(" URL: %s\n", e.Request.URL)
+		fmt.Printf(" StatusCode: %d\n", e.StatusCode)
+		fmt.Printf(" Error: %s\n", e.Error)
+		fmt.Printf("  took %f seconds\n",
 		  time.Since(e.StartedAt).Seconds())
 		fmt.Printf("=========================\n\n")
 	},
 	OnRetry: func(e *gosip.HookEvent) {
 		fmt.Println("\n======= On Retry ========")
-		fmt.Printf("URL: %s\n", e.Request.URL)
-		fmt.Printf("StatusCode: %d\n", e.StatusCode)
-		fmt.Printf("Error: %s\n", e.Error)
-		fmt.Printf("took %f seconds\n",
+		fmt.Printf(" URL: %s\n", e.Request.URL)
+		fmt.Printf(" StatusCode: %d\n", e.StatusCode)
+		fmt.Printf(" Error: %s\n", e.Error)
+		fmt.Printf("  took %f seconds\n",
 		  time.Since(e.StartedAt).Seconds())
 		fmt.Printf("=========================\n\n")
 	},
 	OnRequest: func(e *gosip.HookEvent) {
 		if e.Error == nil {
 			fmt.Println("\n====== On Request =======")
-			fmt.Printf("URL: %s\n", e.Request.URL)
-			fmt.Printf("auth injection took %f seconds\n",
+			fmt.Printf(" URL: %s\n", e.Request.URL)
+			fmt.Printf("  auth injection took %f seconds\n",
 			  time.Since(e.StartedAt).Seconds())
 			fmt.Printf("=========================\n\n")
 		}
@@ -75,9 +75,9 @@ client.Hooks = &gosip.HookHandlers{
 	OnResponse: func(e *gosip.HookEvent) {
 		if e.Error == nil {
 			fmt.Println("\n====== On Response =======")
-			fmt.Printf("URL: %s\n", e.Request.URL)
-			fmt.Printf("StatusCode: %d\n", e.StatusCode)
-			fmt.Printf("took %f seconds\n",
+			fmt.Printf(" URL: %s\n", e.Request.URL)
+			fmt.Printf(" StatusCode: %d\n", e.StatusCode)
+			fmt.Printf("  took %f seconds\n",
 			  time.Since(e.StartedAt).Seconds())
 			fmt.Printf("==========================\n\n")
 		}
