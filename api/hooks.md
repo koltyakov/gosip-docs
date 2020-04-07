@@ -25,14 +25,10 @@ The following handlers are available at the moment:
 ```go
 // HookHandlers struct to configure events handlers
 type HookHandlers struct {
-  // when error appeared
-	OnError func(event *HookEvent)
-	// before retry request
-	OnRetry func(event *HookEvent)
-	// before request is sent
-	OnRequest func(event *HookEvent)
-	// after response is received
-	OnResponse func(event *HookEvent)
+	OnError    func(event *HookEvent) // when error appeared
+	OnRetry    func(event *HookEvent) // before retry request
+	OnRequest  func(event *HookEvent) // before request is sent
+	OnResponse func(event *HookEvent) // after response is received
 }
 ```
 
