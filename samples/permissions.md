@@ -119,6 +119,73 @@ if err := item.Roles().ResetInheritance(); err != nil {
 
 After reseting object roles assigments its permissions are again inherited from the parent object.
 
+### Getting object permissions
+
+When dealing with OData collection of objects with unique permissions OData items' role assigment can be requested using `RoleAssignments`, also `HasUniqueRoleAssignments` can be used in moderation.
+
+> Please be aware that `HasUniqueRoleAssignments` is a heavy property that creates workload on a SharePoint server.
+
+Try not abusing it by potential requests to large lists getting a bunch of items.
+
+```go
+// Getting all lists with role assigments details
+res, err := sp.Web().Lists().
+  Select(`
+    Title,
+    RoleAssignments/Member/*,
+    RoleAssignments/RoleDefinitionBindings/*
+  `).
+  Expand(`
+    RoleAssignments/Member,
+    RoleAssignments/RoleDefinitionBindings
+  `).
+  Get()
+```
+
+[See more](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/permissions).
+
+`RoleAssigments` if any applied contains an array of objects.
+
+```go
+var lists []*struct {
+  Title           string
+  RoleAssignments []*api.RoleAssigment
+}
+
+// .Normalized() method aligns responses between different OData modes
+if err := json.Unmarshal(res.Normalized(), &lists); err != nil {
+  log.Fatalf("unable to parse the response: %v", err)
+}
+```
+
+Assigments is a Member and binded RoleDefinitions:
+
+```go
+// RoleAssigment role asigments model
+type RoleAssigment struct {
+	Member *struct {
+		LoginName     string
+		PrincipalType int
+	}
+	RoleDefinitionBindings []*RoleDefInfo
+}
+```
+
+### Base permissions
+
+`BasePermissions` is permissions representation with `Low` and `High`  pair. Don't panic if API returns only BasePermissions  \(`{ "High": "2147483647", "Low": "4294705151" }`\), using `HasPermissions` helper it's simple to check if it includes required permissions kind:
+
+```go
+effectiveBasePermissions := api.BasePermissions{
+	High: 432,
+	Low:  1011030767,
+}
+
+hasPerm := api.HasPermissions(
+  effectiveBasePermissions,
+  api.PermissionKind.EditListItems)
+```
+
 ### Summary
 
 Now we know how to treat SharePoint permissions using Gosip and Fluent API. Before wrapping up, we want to stress on importance of careful planning of permissions model, as less unique permissions is better.
