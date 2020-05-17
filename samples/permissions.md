@@ -119,7 +119,7 @@ if err := item.Roles().ResetInheritance(); err != nil {
 
 After reseting object roles assigments its permissions are again inherited from the parent object.
 
-### Getting object permissions
+### Getting collection objects' permissions
 
 When dealing with OData collection of objects with unique permissions OData items' role assigment can be requested using `RoleAssignments`, also `HasUniqueRoleAssignments` can be used in moderation.
 
