@@ -123,7 +123,7 @@ After reseting object roles assigments its permissions are again inherited from 
 
 When dealing with OData collection of objects with unique permissions OData items' role assigment can be requested using `RoleAssignments`, also `HasUniqueRoleAssignments` can be used in moderation.
 
-> Please be aware that `HasUniqueRoleAssignments` is a heavy property that creates workload on a SharePoint server.
+> Please be aware that `HasUniqueRoleAssignments` is a heavy property that creates workload on a SharePoint server and better be used at minimal.
 
 Try not abusing it by potential requests to large lists getting a bunch of items.
 
@@ -176,6 +176,7 @@ type RoleAssigment struct {
 `BasePermissions` is permissions representation with `Low` and `High`  pair. Don't panic if API returns only BasePermissions  \(`{ "High": "2147483647", "Low": "4294705151" }`\), using `HasPermissions` helper it's simple to check if it includes required permissions kind:
 
 ```go
+// User effective base permissions
 effectiveBasePermissions := api.BasePermissions{
 	High: 432,
 	Low:  1011030767,
