@@ -74,19 +74,86 @@ Gosip simplifies this payload operating with map of strings. In payload, map key
 
 The fingerprints for the data types are following:
 
-| Field data type | Value sample | Comment |
-| :--- | :--- | :--- |
-| Text \(single line and note\) | "text" |  |
-| Number  | "123" |  |
-| Yes/No | "1" | "1" - Yes, "2" - No |
-| Person or group, single and multiple | \`\[{ "Key": "LoginName", "IsResolved": true }\]\` | "IsResolved" is optional |
-| Date time | "6/23/2018 10:15 PM" | for different web locales is different  |
-| Date only | "6/23/2018' | for different web locales is different  |
-| Choice  \(single\) | "Choice 1" |  |
-| Choice  \(multi\) | "Choice 1;\#Choice 2" | ";\#" separated list |
-| Hyperlink or picture | "https://go.spflow.com, Gosip" | a description can go after URL and ", " delimiter |
-| Lookup \(single\) | "2" | item ID as string |
-| Lookup \(multi\) | "1;\#;\#2;\#;\#3;\#" | ";\#" separated list, after each ID goes additional ";\#"  |
-| Managed metadata \(single\) | "Department 2\|220a3627-4cd3-453d-ac54-34e71483bb8a;" |  |
-| Managed metadata \(multi\) | "Department 2\|220a3627-4cd3-453d-ac54-34e71483bb8a;Department 3\|700a1bc3-3ef6-41ba-8a10-d3054f58db4b;" |  |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Field data type</th>
+      <th style="text-align:left">Value sample</th>
+      <th style="text-align:left">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Text (single line and note)</td>
+      <td style="text-align:left">&quot;text&quot;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Number</td>
+      <td style="text-align:left">&quot;123&quot;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Yes/No</td>
+      <td style="text-align:left">&quot;1&quot;</td>
+      <td style="text-align:left">&quot;1&quot; - Yes, &quot;2&quot; - No</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Person or group, single and multiple</td>
+      <td style="text-align:left">`[{ &quot;Key&quot;: &quot;LoginName&quot;, &quot;IsResolved&quot;: true
+        }]`</td>
+      <td style="text-align:left">
+        <p>&quot;LoginName&quot; is a valid login name, including provider prefix</p>
+        <p>&quot;IsResolved&quot; is optional</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Date time</td>
+      <td style="text-align:left">&quot;6/23/2018 10:15 PM&quot;</td>
+      <td style="text-align:left">for different web locales is different</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Date only</td>
+      <td style="text-align:left">&quot;6/23/2018&apos;</td>
+      <td style="text-align:left">for different web locales is different</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Choice (single)</td>
+      <td style="text-align:left">&quot;Choice 1&quot;</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Choice (multi)</td>
+      <td style="text-align:left">&quot;Choice 1;#Choice 2&quot;</td>
+      <td style="text-align:left">&quot;;#&quot; separated list</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Hyperlink or picture</td>
+      <td style="text-align:left">&quot;https://go.spflow.com, Gosip&quot;</td>
+      <td style="text-align:left">a description can go after URL and &quot;, &quot; delimiter</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Lookup (single)</td>
+      <td style="text-align:left">&quot;2&quot;</td>
+      <td style="text-align:left">item ID as string</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Lookup (multi)</td>
+      <td style="text-align:left">&quot;1;#;#2;#;#3;#&quot;</td>
+      <td style="text-align:left">&quot;;#&quot; separated list, after each ID goes additional &quot;;#&quot;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Managed metadata (single)</td>
+      <td style="text-align:left">&quot;Department 2|220a3627-4cd3-453d-ac54-34e71483bb8a;&quot;</td>
+      <td
+      style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Managed metadata (multi)</td>
+      <td style="text-align:left">&quot;Department 2|220a3627-4cd3-453d-ac54-34e71483bb8a;Department 3|700a1bc3-3ef6-41ba-8a10-d3054f58db4b;&quot;</td>
+      <td
+      style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>
 
