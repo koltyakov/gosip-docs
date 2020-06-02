@@ -91,7 +91,7 @@ The fingerprints for the data types are following:
     <tr>
       <td style="text-align:left">Number</td>
       <td style="text-align:left">&quot;123&quot;</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">as a string</td>
     </tr>
     <tr>
       <td style="text-align:left">Yes/No</td>
