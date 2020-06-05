@@ -19,4 +19,9 @@ Have no particular code to share but a description of how you use the library or
 | [Dev API Proxy](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/proxy) | Shows how to expose SharePoint API as an anonymous endpoint for a dev server. |
 | [Files upload \(sync\)](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/sync) | Is a syncronization sample which provides a single time assets upload or/and local file system watch mode. Provides in times faster upload when any other known alternative. |
 | [Unmarshaling API responses](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/unmarshaling) | Basic unmarhsaling \(response parsing\) sample. |
+| [Objects Permissions](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/permissions) | The sample shows how to get permissions for OData collections. |
+| [Tenant API](https://github.com/koltyakov/gosip-sandbox/blob/master/samples/tenant/main.go) | Accessing SPO tenant scope API basic sample. E.g. for creating classic sites. |
+| [Modern Sites Management](https://github.com/koltyakov/gosip-sandbox/tree/master/samples/modernSites) | The sample shows how to create, delete Modern Sites and how to check a site's provisioning status. |
+
+
 
