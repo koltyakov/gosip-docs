@@ -35,7 +35,7 @@ func main() {
 	flag.StringVar(&rawSecret, "secret", "", "Raw secret string")
 	flag.Parse()
 
-	crypt := cpass.Cpass()
+	crypt := cpass.Cpass("")
 
 	secret, _ := crypt.Encode(rawSecret)
 	fmt.Println(secret)
