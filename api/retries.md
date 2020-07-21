@@ -63,3 +63,20 @@ if _, err := sp.Web().GetFolder(folderURI).Conf(conf).Get(); err != nil {
 }
 ```
 
+### Custom retry delays
+
+There is no direct way to redefine delays between retries, there was no such demand. However, extending delays is achievable via [OnRetry hook](hooks.md). The `OnRetry` hook is called after it's known that a retry is needed but before the actual retry. The mechanics of retry checks is implemented in the way that `should retry check` actually also waits for the delay. In other words, `OnRetry` hook is fired right before the next retry is sent. So, if that hook is locked for a time the delay is increased correspondingly. That might be helpful for adding extra delay, yet won't work for the cases when the delays should be reduced or flatten.
+
+While adding timeouts in hooks, make sure you're using something respecting context cancelation:
+
+```go
+sleepTimeout := 1 * time.Second
+
+select {
+case <-e.Request.Context().Done():
+  return false
+case <-time.After(sleepTimeout):
+  return true
+}
+```
+
