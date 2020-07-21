@@ -76,7 +76,6 @@ select {
 case <-e.Request.Context().Done():
   return
 case <-time.After(sleepTimeout):
-  return
 }
 ```
 
