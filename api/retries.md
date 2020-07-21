@@ -74,9 +74,9 @@ sleepTimeout := 1 * time.Second
 
 select {
 case <-e.Request.Context().Done():
-  return false
+  return
 case <-time.After(sleepTimeout):
-  return true
+  return
 }
 ```
 
