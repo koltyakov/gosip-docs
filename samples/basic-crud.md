@@ -91,7 +91,9 @@ up to your preferences.
 ### Getting a specific item
 
 ```go
-itemRes, err := list.Items().GetByID(1).Get()
+itemID := 42 // should specific item ID
+
+itemRes, err := list.Items().GetByID(itemID).Get()
 if err != nil {
 	log.Fatal(err)
 }
@@ -109,9 +111,11 @@ itemUpdatePayload := []byte(`{
 	"Title": "Updated Title"
 }`)
 
+itemID := 42 // should specific item ID
+
 // Constructs and sends update operation request
 // itemUpdateRes is a byte array read from response body with extra methods
-itemUpdateRes, err := list.Items().Add(itemUpdatePayload)
+itemUpdateRes, err := list.Items().GetById(itemID).Update(itemUpdatePayload)
 if err != nil {
 	log.Fatal(err)
 }
@@ -126,8 +130,10 @@ Payloads can be constructed in a usual Go way using marshalling struct or string
 Item can be not only deleted but recycled with a further restore operation, which can be provide more safety.
 
 ```go
-// list.Items().GetByID(1).Delete() // or .Recycle()
-if _, err := list.Items().GetByID(1).Recycle(); err != nil {
+itemID := 42 // should specific item ID
+
+// list.Items().GetByID(itemID).Delete() // or .Recycle()
+if _, err := list.Items().GetByID(itemID).Recycle(); err != nil {
 	log.Fatal(err)
 }
 ```
