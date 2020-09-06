@@ -1,5 +1,5 @@
 ---
-description: Azure AD Device token authentication (sample)
+description: Azure AD Device Token authentication
 ---
 
 # Azure Device Flow

@@ -18,13 +18,19 @@ Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{st
 | `/adfs` | ✅ | ✅ | [spo](strategies/adfs.md#sharepoint-online-configuration), [on-prem](strategies/adfs.md#on-premises-configuration), [on-prem \(wap\)](strategies/adfs.md#on-premises-behing-wap-configuration) |
 | `/fba` | ❌ | ✅ | [sample](strategies/fba.md#json) |
 | `/tmg` | ❌ | ✅ | [sample](strategies/tmg.md#json) |
-| Azure AD Auth | ✅ | ❌ | [device](custom-auth/azure-device-flow.md), [certificate](custom-auth/azure-certificate-auth.md) |
 
 JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
 
 ### Additional strategies
 
 Gosip supports [custom](custom-auth/) \(ad hoc\) strategies. Some worthy are boiled in [the Sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) to be added later on to the main package in a case of the demand.
+
+| Strategy name | SPO | On-Prem | Credentials sample\(s\) |
+| :--- | :--- | :--- | :--- |
+| Azure AD Auth | ✅ | ❌ | [device](custom-auth/azure-device-flow.md#auth-configuration-and-usage), [certificate](custom-auth/azure-certificate-auth.md#auth-configuration-and-usage) |
+| On-Demand | ✅ | ✅ | [sample](custom-auth/on-demand.md#configure-and-usage-sample) |
+| Alternative NTLM | ❌ | ✅ | [see more](custom-auth/alternative-ntlm.md) |
+| Dynamic auth \(helper\) | ✅ | ✅ | [see more](custom-auth/dynamic-auth.md) |
 
 ### Secrets encoding
 

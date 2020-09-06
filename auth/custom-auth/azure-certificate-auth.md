@@ -1,5 +1,5 @@
 ---
-description: Azure AD Certificate (Environment-Based) authentication (sample)
+description: Azure AD Certificate (Environment-Based) App Only authentication
 ---
 
 # Azure Certificate Auth
