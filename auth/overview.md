@@ -18,6 +18,7 @@ Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{st
 | `/adfs` | ✅ | ✅ | [spo](strategies/adfs.md#sharepoint-online-configuration), [on-prem](strategies/adfs.md#on-premises-configuration), [on-prem \(wap\)](strategies/adfs.md#on-premises-behing-wap-configuration) |
 | `/fba` | ❌ | ✅ | [sample](strategies/fba.md#json) |
 | `/tmg` | ❌ | ✅ | [sample](strategies/tmg.md#json) |
+| Azure AD Auth | ✅ | ❌ | [device](custom-auth/azure-device-flow.md), [certificate](custom-auth/azure-certificate-auth.md) |
 
 JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
 
