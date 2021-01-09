@@ -22,18 +22,19 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 ### Supported auth strategies
 
+* SharePoint Online:
+  * [Azure Certificate \(App Only\)](auth/custom-auth/azure-certificate-auth.md)
+  * [Azure Username/Password](auth/custom-auth/azure-creds-auth.md)
+  * [SAML](auth/strategies/saml.md) based with user credentials
+  * [Add-In only](auth/strategies/addin.md) permissions
+  * ADFS user credentials \(automatically detects in [SAML](auth/strategies/saml.md) strategy\)
+  * [Azure Device flow](auth/custom-auth/azure-device-flow.md)
+  * [On-Demand authentication](auth/custom-auth/on-demand.md)
 * SharePoint On-Premises 2019/2016/2013:
   * [User credentials](auth/strategies/ntlm.md) \(NTLM\)
   * [ADFS user credentials](auth/strategies/adfs.md) \(ADFS, WAP -&gt; Basic/NTLM, WAP -&gt; ADFS\)
   * Behind a reverse proxy \([Forefront TMG](auth/strategies/tmg.md), [WAP -&gt; Basic/NTLM](auth/strategies/adfs.md), [WAP -&gt; ADFS](auth/strategies/adfs.md)\)
   * [Form-based authentication](auth/strategies/fba.md) \(FBA\)
-  * [On-Demand authentication](auth/custom-auth/on-demand.md)
-* SharePoint Online:
-  * [SAML](auth/strategies/saml.md) based with user credentials
-  * [Add-In only](auth/strategies/addin.md) permissions
-  * ADFS user credentials \(automatically detects in [SAML](auth/strategies/saml.md) strategy\)
-  * [Azure Device flow](auth/custom-auth/azure-device-flow.md)
-  * [Azure Certificate \(App Only\)](auth/custom-auth/azure-environment-auth.md)
   * [On-Demand authentication](auth/custom-auth/on-demand.md)
 
 ## Installation

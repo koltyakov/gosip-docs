@@ -15,7 +15,7 @@ Checkout [the code](https://github.com/koltyakov/gosip-sandbox/blob/master/strat
 ### Azure App registration
 
 {% hint style="info" %}
-Follow the [steps](https://go.spflow.com/auth/custom-auth/azure-certificate-auth#azure-app-registration)
+Follow the [steps](azure-environment-auth.md#azure-app-registration)
 {% endhint %}
 
 ### JSON
