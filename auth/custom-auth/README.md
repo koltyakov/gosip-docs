@@ -39,12 +39,20 @@ For this construction to work `strategy.AuthCnfg` should implement `gosip.AuthCn
 
 ```go
 type AuthCnfg interface {
-	ReadConfig(configPath string) error
-	WriteConfig(configPath string) error
-	GetAuth() (string, error)
-	GetSiteURL() string
-	GetStrategy() string
+  // Authentication initializer (token/cookie/header, expiration, error)
+	GetAuth() (string, int64, error)
+	// Authentication middleware fabric
 	SetAuth(req *http.Request, client *SPClient) error
+
+	GetSiteURL() string  // SiteURL getter method
+	GetStrategy() string // Strategy code getter (triggered on demand)
+
+  // Parses credentials from a provided JSON byte array content
+	ParseConfig(jsonConf []byte) error
+	// Reads credentials from storage (triggered on demand)
+	ReadConfig(configPath string) error
+	// Writes credential to storage (triggered on demand)
+	WriteConfig(configPath string) error
 }
 ```
 
