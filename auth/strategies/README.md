@@ -30,7 +30,7 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 Within experimental in the [sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) these deserve mentioning:
 
-{% page-ref page="../custom-auth/azure-certificate-auth.md" %}
+{% page-ref page="../custom-auth/azure-environment-auth.md" %}
 
 {% page-ref page="../custom-auth/azure-device-flow.md" %}
 

@@ -27,7 +27,7 @@ Gosip supports [custom](custom-auth/) \(ad hoc\) strategies. Some worthy are boi
 
 | Strategy name | SPO | On-Prem | Credentials sample\(s\) |
 | :--- | :--- | :--- | :--- |
-| Azure AD Auth | ✅ | ❌ | [device](custom-auth/azure-device-flow.md#auth-configuration-and-usage), [certificate](custom-auth/azure-certificate-auth.md#auth-configuration-and-usage) |
+| Azure AD Auth | ✅ | ❌ | [device](custom-auth/azure-device-flow.md#auth-configuration-and-usage), [certificate](custom-auth/azure-environment-auth.md#auth-configuration-and-usage) |
 | On-Demand | ✅ | ✅ | [sample](custom-auth/on-demand.md#configure-and-usage-sample) |
 | Alternative NTLM | ❌ | ✅ | [see more](custom-auth/alternative-ntlm.md) |
 | Dynamic auth \(helper\) | ✅ | ✅ | [see more](custom-auth/dynamic-auth.md) |

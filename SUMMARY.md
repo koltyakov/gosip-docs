@@ -16,6 +16,8 @@
   * [Anonymous](auth/strategies/anonymous.md)
 * [Custom Auth](auth/custom-auth/README.md)
   * [Azure Certificate Auth](auth/custom-auth/azure-certificate-auth.md)
+  * [Azure Env-based Auth](auth/custom-auth/azure-environment-auth.md)
+  * [Azure Creds Auth](auth/custom-auth/azure-creds-auth.md)
   * [Azure Device Flow](auth/custom-auth/azure-device-flow.md)
   * [On-Demand Auth](auth/custom-auth/on-demand.md)
   * [Alternative NTLM](auth/custom-auth/alternative-ntlm.md)

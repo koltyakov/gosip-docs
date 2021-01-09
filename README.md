@@ -33,7 +33,7 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
   * [Add-In only](auth/strategies/addin.md) permissions
   * ADFS user credentials \(automatically detects in [SAML](auth/strategies/saml.md) strategy\)
   * [Azure Device flow](auth/custom-auth/azure-device-flow.md)
-  * [Azure Certificate \(App Only\)](auth/custom-auth/azure-certificate-auth.md)
+  * [Azure Certificate \(App Only\)](auth/custom-auth/azure-environment-auth.md)
   * [On-Demand authentication](auth/custom-auth/on-demand.md)
 
 ## Installation
