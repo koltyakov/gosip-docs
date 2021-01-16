@@ -4,7 +4,7 @@ description: Custom authentication mechanisms
 
 # Custom Auth
 
-Gosip allows providing custom authentication mechanisms. For example, you are considering reusing Fluent API helpers and HTTP Client but existing authentication strategies do not feet your environment specifics. Maybe your tenant configured with custom ADFS provider, maybe it's 2FA and there are no alternatives and you need On-Demand auth, or maybe it's something integrated to Azure AAD auth, but it missed in Gosip strategies list? Fortunately, this is not any sort of stopper. All included authentication strategies are a sort of a pluging and it's rather affordable to add a new stratagy on your own.
+Gosip allows providing custom authentication mechanisms. For example, you are considering reusing Fluent API helpers and HTTP Client but existing authentication strategies do not feet your environment specifics. Maybe your tenant configured with custom ADFS provider, maybe it's 2FA and there are no alternatives and you need On-Demand auth, but it missed in Gosip strategies list? Fortunately, this is not any sort of stopper. All included authentication strategies are a sort of a pluging and it's rather affordable to add a new strategy on your own.
 
 Let's take a look at any strategy binding:
 
@@ -38,27 +38,27 @@ What we can see? Some strategy is imported into the `strategy` namespace. A stra
 For this construction to work `strategy.AuthCnfg` should implement `gosip.AuthCnfg` interface which is:
 
 ```go
+// AuthCnfg is an abstract auth config interface,
+// allows different authentications strategies' dependency injection
 type AuthCnfg interface {
-  // Authentication initializer (token/cookie/header, expiration, error)
-	GetAuth() (string, int64, error)
 	// Authentication middleware fabric
+	// applyes round tripper or enriches requests with authentication and metadata
 	SetAuth(req *http.Request, client *SPClient) error
 
-	GetSiteURL() string  // SiteURL getter method
-	GetStrategy() string // Strategy code getter (triggered on demand)
+	// Authentication initializer (token/cookie/header, expiration, error)
+	// to support cabability for exposing tokens for external tools
+	// e.g. as of this sample project https://github.com/koltyakov/spvault
+	GetAuth() (string, int64, error)
 
-  // Parses credentials from a provided JSON byte array content
-	ParseConfig(jsonConf []byte) error
-	// Reads credentials from storage (triggered on demand)
-	ReadConfig(configPath string) error
-	// Writes credential to storage (triggered on demand)
-	WriteConfig(configPath string) error
+	ParseConfig(jsonConf []byte) error  // Parses credentials from a provided JSON byte array content
+	ReadConfig(configPath string) error // Reads credentials from storage
+
+	GetSiteURL() string  // SiteURL getter method
+	GetStrategy() string // Strategy code getter
 }
 ```
 
 Philosophy of the strategies is to have two initiation modes, the first is a strict declaration of the creds and the second one is reading credentials from the config. That config is not necessarily a file on the file system it can be a request to a key vault or OS credential manager, etc.
-
-There should be also `WriteConfig` method, which can be a dummy in case of read-only configs.
 
 As the interface is passed to `gosip.SPClient` struct, Gosip knows nothing about the creds and the context, for that reason `GetSiteURL` method is vital to target requests to a correct root URL.
 
