@@ -33,7 +33,7 @@
 
 ## Samples
 
-* [Library Initiation](samples/initiation.md)
+* [Library Initiation](samples/library-initiation.md)
 * [Basic CRUD](samples/basic-crud.md)
 * [Documents](samples/documents.md)
 * [Chunk upload](samples/chunk-upload.md)
