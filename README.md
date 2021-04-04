@@ -45,7 +45,7 @@ go get github.com/koltyakov/gosip
 
 ## Usage insights
 
-1. Understand SharePoint environment type and authentication strategy.
+### Understand SharePoint environment type and authentication strategy.
 
 Let's assume it's, SharePoint Online and Add-In Only permissions. Then `strategy "github.com/koltyakov/gosip/auth/addin"` sub package should be used.
 
@@ -59,7 +59,7 @@ import (
 )
 ```
 
-1. Initiate authentication object.
+### Initiate authentication object.
 
 ```go
 auth := &strategy.AuthCnfg{
@@ -84,7 +84,7 @@ if err != nil {
 }
 ```
 
-1. Bind auth client with Fluent API.
+### Bind auth client with Fluent API.
 
 ```go
 client := &gosip.SPClient{AuthCnfg: auth}
