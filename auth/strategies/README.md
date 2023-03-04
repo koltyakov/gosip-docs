@@ -1,5 +1,5 @@
 ---
-description: "\U0001F510 SharePoint authentication strategies implemented in Gosip"
+description: 🔐 SharePoint authentication strategies implemented in Gosip
 ---
 
 # Strategies
@@ -8,21 +8,51 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 {% tabs %}
 {% tab title="SharePoint Online" %}
-{% page-ref page="saml.md" %}
+{% content-ref url="azure-certificate-auth.md" %}
+[azure-certificate-auth.md](azure-certificate-auth.md)
+{% endcontent-ref %}
 
-{% page-ref page="addin.md" %}
+{% content-ref url="azure-environment-auth.md" %}
+[azure-environment-auth.md](azure-environment-auth.md)
+{% endcontent-ref %}
 
-{% page-ref page="adfs.md" %}
+{% content-ref url="azure-creds-auth.md" %}
+[azure-creds-auth.md](azure-creds-auth.md)
+{% endcontent-ref %}
+
+{% content-ref url="azure-device-flow.md" %}
+[azure-device-flow.md](azure-device-flow.md)
+{% endcontent-ref %}
+
+{% content-ref url="saml.md" %}
+[saml.md](saml.md)
+{% endcontent-ref %}
+
+{% content-ref url="addin.md" %}
+[addin.md](addin.md)
+{% endcontent-ref %}
+
+{% content-ref url="adfs.md" %}
+[adfs.md](adfs.md)
+{% endcontent-ref %}
 {% endtab %}
 
 {% tab title="SharePoint On-Premises" %}
-{% page-ref page="ntlm.md" %}
+{% content-ref url="ntlm.md" %}
+[ntlm.md](ntlm.md)
+{% endcontent-ref %}
 
-{% page-ref page="adfs.md" %}
+{% content-ref url="adfs.md" %}
+[adfs.md](adfs.md)
+{% endcontent-ref %}
 
-{% page-ref page="fba.md" %}
+{% content-ref url="fba.md" %}
+[fba.md](fba.md)
+{% endcontent-ref %}
 
-{% page-ref page="tmg.md" %}
+{% content-ref url="tmg.md" %}
+[tmg.md](tmg.md)
+{% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
 
@@ -30,17 +60,9 @@ description: "\U0001F510 SharePoint authentication strategies implemented in Gos
 
 Within experimental in the [sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) these deserve mentioning:
 
-{% page-ref page="../custom-auth/azure-certificate-auth.md" %}
-
-{% page-ref page="../custom-auth/azure-environment-auth.md" %}
-
-{% page-ref page="../custom-auth/azure-creds-auth.md" %}
-
-{% page-ref page="../custom-auth/azure-device-flow.md" %}
-
-{% page-ref page="../custom-auth/on-demand.md" %}
-
-
+{% content-ref url="../custom-auth/on-demand.md" %}
+[on-demand.md](../custom-auth/on-demand.md)
+{% endcontent-ref %}
 
 
 

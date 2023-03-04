@@ -64,15 +64,20 @@ As the interface is passed to `gosip.SPClient` struct, Gosip knows nothing about
 
 `GetStrategy` method should return the string alias value of the strategy name if something specific should be happening based on its value.
 
-`GetAuth` method is for token and cookie-based authentications, it can be omitted and return just a blank value, or it can be an actual place for authentication flow happening inside, returning a cached string which is when applied somehow to the requests making them authenticated. In case of custom logic, we'd recommend using GetAuth method and don't forget TTL caching to reduce roundtrips. With a robust external auth client, GetAuth can be dummy minimum \([NTLM example](https://github.com/koltyakov/gosip/blob/915876dc1a96ddb8db5b8ed7c403a92608db3f05/auth/ntlm/helpers.go#L15) shows this approach\).
+`GetAuth` method is for token and cookie-based authentications, it can be omitted and return just a blank value, or it can be an actual place for authentication flow happening inside, returning a cached string which is when applied somehow to the requests making them authenticated. In case of custom logic, we'd recommend using GetAuth method and don't forget TTL caching to reduce roundtrips. With a robust external auth client, GetAuth can be dummy minimum ([NTLM example](https://github.com/koltyakov/gosip/blob/915876dc1a96ddb8db5b8ed7c403a92608db3f05/auth/ntlm/helpers.go#L15) shows this approach).
 
 And finally, `SetAuth`, the method where all the magic happening. `SetAuth` method is a middleware, it receives runtime request and should append authentication stuff. Check these as samples: [NTML's SetAuth](https://github.com/koltyakov/gosip/blob/915876dc1a96ddb8db5b8ed7c403a92608db3f05/auth/ntlm/auth.go#L109), [cookie-based auth](https://github.com/koltyakov/gosip/blob/915876dc1a96ddb8db5b8ed7c403a92608db3f05/auth/saml/auth.go#L94),  [Bearer token-based auth](https://github.com/koltyakov/gosip/blob/915876dc1a96ddb8db5b8ed7c403a92608db3f05/auth/addin/auth.go#L96).
 
-By implementing AuthCnfg struct and gosip.AuthCnfg interface any custom authentication can be added to Gosip. 
+By implementing AuthCnfg struct and gosip.AuthCnfg interface any custom authentication can be added to Gosip.&#x20;
 
-{% page-ref page="azure-device-flow.md" %}
+{% content-ref url="../strategies/azure-device-flow.md" %}
+[azure-device-flow.md](../strategies/azure-device-flow.md)
+{% endcontent-ref %}
 
-{% page-ref page="on-demand.md" %}
+{% content-ref url="on-demand.md" %}
+[on-demand.md](on-demand.md)
+{% endcontent-ref %}
 
-{% page-ref page="alternative-ntlm.md" %}
-
+{% content-ref url="alternative-ntlm.md" %}
+[alternative-ntlm.md](alternative-ntlm.md)
+{% endcontent-ref %}

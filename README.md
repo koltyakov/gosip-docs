@@ -1,10 +1,10 @@
 ---
-description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper for Go (Golang)'
+description: ⚡️ SharePoint authentication, HTTP client & fluent API wrapper for Go (Golang)
 ---
 
 # Introduction
 
-![Build Status](https://koltyakov.visualstudio.com/SPNode/_apis/build/status/gosip?branchName=master) [![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip) [![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)](https://codecov.io/gh/koltyakov/gosip) [![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE) [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
+![Build Status](https://koltyakov.visualstudio.com/SPNode/\_apis/build/status/gosip?branchName=master) [![Go Report Card](https://goreportcard.com/badge/github.com/koltyakov/gosip)](https://goreportcard.com/report/github.com/koltyakov/gosip) [![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg)](https://codecov.io/gh/koltyakov/gosip) [![License](https://img.shields.io/github/license/koltyakov/gosip.svg)](https://github.com/koltyakov/gosip/blob/master/LICENSE) [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
 ![](.gitbook/assets/gosip.png)
 
@@ -12,29 +12,29 @@ description: '⚡️ SharePoint authentication, HTTP client & fluent API wrapper
 
 * Unattended authentication using different strategies.
 * [Fluent API](api/fluent.md) syntax for SharePoint object model.
-* Simplified API consumption \(REST, CSOM, SOAP, etc.\).
-* SharePoint-aware embedded features \(retries, header presets, error handling\).
+* Simplified API consumption (REST, CSOM, SOAP, etc.).
+* SharePoint-aware embedded features (retries, header presets, error handling).
 
 ### Supported SharePoint versions
 
-* SharePoint Online \(SPO\).
-* On-Premises \(2019/2016/2013\).
+* SharePoint Online (SPO).
+* On-Premises (2019/2016/2013).
 
 ### Supported auth strategies
 
 * SharePoint Online:
-  * [Azure Certificate \(App Only\)](auth/custom-auth/azure-certificate-auth.md)
-  * [Azure Username/Password](auth/custom-auth/azure-creds-auth.md)
+  * [Azure Certificate (App Only)](auth/strategies/azure-certificate-auth.md)
+  * [Azure Username/Password](auth/strategies/azure-creds-auth.md)
   * [SAML](auth/strategies/saml.md) based with user credentials
   * [Add-In only](auth/strategies/addin.md) permissions
-  * ADFS user credentials \(automatically detects in [SAML](auth/strategies/saml.md) strategy\)
-  * [Azure Device flow](auth/custom-auth/azure-device-flow.md)
+  * ADFS user credentials (automatically detects in [SAML](auth/strategies/saml.md) strategy)
+  * [Azure Device flow](auth/strategies/azure-device-flow.md)
   * [On-Demand authentication](auth/custom-auth/on-demand.md)
 * SharePoint On-Premises 2019/2016/2013:
-  * [User credentials](auth/strategies/ntlm.md) \(NTLM\)
-  * [ADFS user credentials](auth/strategies/adfs.md) \(ADFS, WAP -&gt; Basic/NTLM, WAP -&gt; ADFS\)
-  * Behind a reverse proxy \([Forefront TMG](auth/strategies/tmg.md), [WAP -&gt; Basic/NTLM](auth/strategies/adfs.md), [WAP -&gt; ADFS](auth/strategies/adfs.md)\)
-  * [Form-based authentication](auth/strategies/fba.md) \(FBA\)
+  * [User credentials](auth/strategies/ntlm.md) (NTLM)
+  * [ADFS user credentials](auth/strategies/adfs.md) (ADFS, WAP -> Basic/NTLM, WAP -> ADFS)
+  * Behind a reverse proxy ([Forefront TMG](auth/strategies/tmg.md), [WAP -> Basic/NTLM](auth/strategies/adfs.md), [WAP -> ADFS](auth/strategies/adfs.md))
+  * [Form-based authentication](auth/strategies/fba.md) (FBA)
   * [On-Demand authentication](auth/custom-auth/on-demand.md)
 
 ## Installation
@@ -71,7 +71,7 @@ auth := &strategy.AuthCnfg{
 
 AuthCnfg's from different strategies contains different options relevant for a specified auth type.
 
-The authentication options can be provided explicitly or can be read from a configuration file \(see [more](auth/overview.md#authentication-strategies)\).
+The authentication options can be provided explicitly or can be read from a configuration file (see [more](auth/overview.md#authentication-strategies)).
 
 ```go
 configPath := "./config/private.json"
@@ -240,11 +240,10 @@ SPClient has `Execute` method which is a wrapper function injecting SharePoint a
 
 ## Reference
 
-Many auth flows have been "copied" from [node-sp-auth](https://github.com/s-kainet/node-sp-auth) library \(used as a blueprint\), which we intensively use in Node.js ecosystem for years.
+Many auth flows have been "copied" from [node-sp-auth](https://github.com/s-kainet/node-sp-auth) library (used as a blueprint), which we intensively use in Node.js ecosystem for years.
 
 Fluent API and wrapper syntax are inspired by [PnPjs](https://github.com/pnp/pnpjs) which is also the first-class citizen on almost all our Node.js and front-end projects with SharePoint involved.
 
 ## License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip?ref=badge_large)
-
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkoltyakov%2Fgosip?ref=badge\_large)
