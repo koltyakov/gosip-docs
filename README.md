@@ -1,5 +1,5 @@
 ---
-description: ⚡️ SharePoint authentication, HTTP client & fluent API wrapper for Go (Golang)
+description: ⚡️ SharePoint SDK for Go (Golang)
 ---
 
 # Introduction
@@ -29,13 +29,13 @@ description: ⚡️ SharePoint authentication, HTTP client & fluent API wrapper 
   * [Add-In only](auth/strategies/addin.md) permissions
   * ADFS user credentials (automatically detects in [SAML](auth/strategies/saml.md) strategy)
   * [Azure Device flow](auth/strategies/azure-device-flow.md)
-  * [On-Demand authentication](auth/custom-auth/on-demand.md)
+  * [On-Demand authentication](auth/strategies/on-demand.md)
 * SharePoint On-Premises 2019/2016/2013:
   * [User credentials](auth/strategies/ntlm.md) (NTLM)
   * [ADFS user credentials](auth/strategies/adfs.md) (ADFS, WAP -> Basic/NTLM, WAP -> ADFS)
   * Behind a reverse proxy ([Forefront TMG](auth/strategies/tmg.md), [WAP -> Basic/NTLM](auth/strategies/adfs.md), [WAP -> ADFS](auth/strategies/adfs.md))
   * [Form-based authentication](auth/strategies/fba.md) (FBA)
-  * [On-Demand authentication](auth/custom-auth/on-demand.md)
+  * [On-Demand authentication](auth/strategies/on-demand.md)
 
 ## Installation
 

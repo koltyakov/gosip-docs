@@ -14,14 +14,14 @@
   * [SAML Auth](auth/strategies/saml.md)
   * [AddIn Only](auth/strategies/addin.md)
   * [NTLM Auth](auth/strategies/ntlm.md)
+  * [NTLM (alternative)](auth/strategies/alternative-ntlm.md)
+  * [On-Demand Auth](auth/strategies/on-demand.md)
   * [ADFS Auth](auth/strategies/adfs.md)
   * [FBA Auth](auth/strategies/fba.md)
   * [TMG Auth](auth/strategies/tmg.md)
   * [Anonymous](auth/strategies/anonymous.md)
-* [Custom Auth](auth/custom-auth/README.md)
-  * [On-Demand Auth](auth/custom-auth/on-demand.md)
-  * [Alternative NTLM](auth/custom-auth/alternative-ntlm.md)
-  * [Dynamic auth](auth/custom-auth/dynamic-auth.md)
+* [Dynamic auth](auth/dynamic-auth.md)
+* [Custom Auth](auth/custom-auth.md)
 
 ## SharePoint client <a href="#api" id="api"></a>
 

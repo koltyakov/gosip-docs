@@ -70,14 +70,10 @@ And finally, `SetAuth`, the method where all the magic happening. `SetAuth` meth
 
 By implementing AuthCnfg struct and gosip.AuthCnfg interface any custom authentication can be added to Gosip.&#x20;
 
-{% content-ref url="../strategies/azure-device-flow.md" %}
-[azure-device-flow.md](../strategies/azure-device-flow.md)
+{% content-ref url="strategies/on-demand.md" %}
+[on-demand.md](strategies/on-demand.md)
 {% endcontent-ref %}
 
-{% content-ref url="on-demand.md" %}
-[on-demand.md](on-demand.md)
-{% endcontent-ref %}
-
-{% content-ref url="alternative-ntlm.md" %}
-[alternative-ntlm.md](alternative-ntlm.md)
+{% content-ref url="strategies/alternative-ntlm.md" %}
+[alternative-ntlm.md](strategies/alternative-ntlm.md)
 {% endcontent-ref %}

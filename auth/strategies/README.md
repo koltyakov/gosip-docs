@@ -60,8 +60,12 @@ description: 🔐 SharePoint authentication strategies implemented in Gosip
 
 Within experimental in the [sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) these deserve mentioning:
 
-{% content-ref url="../custom-auth/on-demand.md" %}
-[on-demand.md](../custom-auth/on-demand.md)
+{% content-ref url="on-demand.md" %}
+[on-demand.md](on-demand.md)
+{% endcontent-ref %}
+
+{% content-ref url="alternative-ntlm.md" %}
+[alternative-ntlm.md](alternative-ntlm.md)
 {% endcontent-ref %}
 
 

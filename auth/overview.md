@@ -26,13 +26,12 @@ JSON and struct representations are different in terms of language notations. So
 
 ### Additional strategies
 
-Gosip supports [custom](custom-auth/) (ad hoc) strategies. Some worthy are boiled in [the Sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) to be added later on to the main package in a case of the demand.
+Gosip supports [custom](custom-auth.md) (ad hoc) strategies. Some worthy are boiled in [the Sandbox](https://github.com/koltyakov/gosip-sandbox/tree/master/strategies) to be added later on to the main package in a case of the demand.
 
-| Strategy name         | SPO | On-Prem | Credentials sample(s)                                         |
-| --------------------- | --- | ------- | ------------------------------------------------------------- |
-| On-Demand             | ✅   | ✅       | [sample](custom-auth/on-demand.md#configure-and-usage-sample) |
-| Alternative NTLM      | ❌   | ✅       | [see more](custom-auth/alternative-ntlm.md)                   |
-| Dynamic auth (helper) | ✅   | ✅       | [see more](custom-auth/dynamic-auth.md)                       |
+| Strategy name    | SPO | On-Prem | Credentials sample(s)                                        |
+| ---------------- | --- | ------- | ------------------------------------------------------------ |
+| On-Demand        | ✅   | ✅       | [sample](strategies/on-demand.md#configure-and-usage-sample) |
+| Alternative NTLM | ❌   | ✅       | [see more](strategies/alternative-ntlm.md)                   |
 
 ### Secrets encoding
 

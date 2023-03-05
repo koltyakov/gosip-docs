@@ -75,3 +75,4 @@ func main() {
 }
 ```
 
+If this strategy doesn't work in your environment yet you know for sure it's NTLM used try [this](alternative-ntlm.md) alternative.
