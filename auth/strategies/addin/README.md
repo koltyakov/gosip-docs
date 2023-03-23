@@ -23,7 +23,7 @@ type AuthCnfg struct {
 
 Realm can be left empty or filled in, that will add small performance improvement. The easiest way to find tenant is to open SharePoint Online site collection, click `Site Settings` -> `Site App Permissions`. Taking any random app, the tenant ID (realm) is the GUID part after the `@`.
 
-See more details of [AddIn Configuration and Permissions](https://github.com/s-kainet/node-sp-auth/wiki/SharePoint-Online-addin-only-authentication).
+See more details of [AddIn Configuration and Permissions](configuration.md).
 
 ### JSON
 
@@ -100,7 +100,7 @@ $newClientSecret # outputs new clientSecret
 
 ### Known issues
 
-AddIn Only auth is considered a legacy, in a production [Azure Cert](azure-certificate-auth.md) is vendor recommended.
+AddIn Only auth is considered a legacy, in a production [Azure Cert](../azure-certificate-auth.md) is vendor recommended.
 
 In new subscriptions you can face Grant App Permission disabled. You'll be getting the following error:
 
@@ -111,7 +111,9 @@ In new subscriptions you can face Grant App Permission disabled. You'll be getti
 }
 ```
 
-To enable this feature, we need to connect to SharePoint using Windows PowerShell and then run `set-spotenant -DisableCustomAppAuthentication $false`.
+To enable this feature, connect to SharePoint using Windows PowerShell and then run:
+
+&#x20;`set-spotenant -DisableCustomAppAuthentication $false`.
 
 ```powershell
 Install-Module -Name Microsoft.Online.SharePoint.PowerShell  

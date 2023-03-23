@@ -1,5 +1,5 @@
 ---
-description: "\U0001F6A6Gosip automated testing"
+description: 🚦Gosip automated testing
 ---
 
 # Testing
@@ -16,7 +16,7 @@ Create auth credentials store files in `./config` folder for corresponding strat
 * [private.onprem-tmg.json](../auth/strategies/tmg.md#json)
 * [private.onprem-wap-adfs.json](../auth/strategies/adfs.md#on-premises-behing-wap-configuration)
 * [private.onprem-wap.json](../auth/strategies/adfs.md#on-premises-behing-wap-configuration)
-* [private.spo-addin.json](../auth/strategies/addin.md#json)
+* [private.spo-addin.json](../auth/strategies/addin/#json)
 * [private.spo-user.json](../auth/strategies/saml.md#json)
 * [private.spo-adfs.json](../auth/strategies/adfs.md#sharepoint-online-configuration)
 
@@ -86,10 +86,9 @@ SPAUTH_ENVCODE=spo SPAPI_HEAVY_TESTS=true go test ./api/... -v -race -count=1
 
 Check [Codecov](https://codecov.io/gh/koltyakov/gosip).
 
-| Branch | Coverage |
-| :--- | :--- |
+| Branch | Coverage                                                                        |
+| ------ | ------------------------------------------------------------------------------- |
 | Master | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/master/graph/badge.svg) |
-| Dev | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/dev/graph/badge.svg) |
+| Dev    | ![codecov](https://codecov.io/gh/koltyakov/gosip/branch/dev/graph/badge.svg)    |
 
 We are targeted to keep code coverage higher than 80% for API and Auth methods altogether.
-

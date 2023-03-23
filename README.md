@@ -26,7 +26,7 @@ description: ⚡️ SharePoint SDK for Go (Golang)
   * [Azure Certificate (App Only)](auth/strategies/azure-certificate-auth.md)
   * [Azure Username/Password](auth/strategies/azure-creds-auth.md)
   * [SAML](auth/strategies/saml.md) based with user credentials
-  * [Add-In only](auth/strategies/addin.md) permissions
+  * [Add-In only](auth/strategies/addin/) permissions
   * ADFS user credentials (automatically detects in [SAML](auth/strategies/saml.md) strategy)
   * [Azure Device flow](auth/strategies/azure-device-flow.md)
   * [On-Demand authentication](auth/strategies/on-demand.md)

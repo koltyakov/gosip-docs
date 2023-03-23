@@ -28,8 +28,8 @@ description: 🔐 SharePoint authentication strategies implemented in Gosip
 [saml.md](saml.md)
 {% endcontent-ref %}
 
-{% content-ref url="addin.md" %}
-[addin.md](addin.md)
+{% content-ref url="addin/" %}
+[addin](addin/)
 {% endcontent-ref %}
 
 {% content-ref url="adfs.md" %}
