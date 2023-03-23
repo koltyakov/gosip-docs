@@ -97,3 +97,27 @@ New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Us
 New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
 $newClientSecret # outputs new clientSecret
 ```
+
+### Known issues
+
+AddIn Only auth is considered a legacy, in a production [Azure Cert](azure-certificate-auth.md) is vendor recommended.
+
+In new subscriptions you can face Grant App Permission disabled. You'll be getting the following error:
+
+```json
+{
+  "error": "invalid_request",
+  "error_description": "Token type is not allowed."
+}
+```
+
+To enable this feature, we need to connect to SharePoint using Windows PowerShell and then run `set-spotenant -DisableCustomAppAuthentication $false`.
+
+```powershell
+Install-Module -Name Microsoft.Online.SharePoint.PowerShell  
+$adminUPN="<the full email address of a SharePoint administrator account, example: jdoe@contosotoycompany.onmicrosoft.com>"  
+$orgName="<name of your Office 365 organization, example: contosotoycompany>"  
+$userCredential = Get-Credential -UserName $adminUPN -Message "Type the password."  
+Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential $userCredential  
+set-spotenant -DisableCustomAppAuthentication $false  
+```
