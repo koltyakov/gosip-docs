@@ -4,7 +4,7 @@ description: Download & upload files from/to SharePoint is simple
 
 # Documents
 
-SharePoint is ECM \(Enterprise Content Management\) system and it's common to expect files being uploaded, downloaded, migrated, processes, and managed in a variety ways.
+SharePoint is ECM (Enterprise Content Management) system and it's common to expect files being uploaded, downloaded, migrated, processes, and managed in a variety ways.
 
 Gosip provides an easy way of dealing with SharePoint document listaries, files and folders.
 
@@ -57,15 +57,15 @@ if _, err := sp.Web().GetFolder(folderRelativeURL).Delete(); err != nil {
 ### Adding/uploading a file
 
 ```go
-	// fileAddResp is a byte array read from response body with extra methods
-	fileAddResp, err := foler.Files().
-		Add("My File.txt", []byte("File content"), true)
-	
-	if err != nil {
-		log.Fatal(err)
-	}
+// fileAddResp is a byte array read from response body with extra methods
+fileAddResp, err := foler.Files().
+	Add("My File.txt", []byte("File content"), true)
 
-	fmt.Printf("New file URL: %s\n", fileAddResp.Data().ServerRelativeURL)
+if err != nil {
+	log.Fatal(err)
+}
+
+fmt.Printf("New file URL: %s\n", fileAddResp.Data().ServerRelativeURL)
 ```
 
 Obviously, file content can be a result of reading a file from disk, e.g.:
@@ -150,4 +150,3 @@ if _, err := io.Copy(file, fileReader); err != nil {
 Using Gosip you can concentrate on business logic and Go language aspects while processing documents actions in SharePoint seemlessly.
 
 With use of IntelliSense and Fluent syntax other supported actions can be consumed based on a specific requirement.
-
