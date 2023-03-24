@@ -46,6 +46,10 @@ https://{organization}.sharepoint.com/sites/{site}/\_layouts/15/appinv.aspx
 
 <figure><img src="../../../.gitbook/assets/trust-addin.jpg" alt=""><figcaption></figcaption></figure>
 
+To check which app principals are assigned for a site collection use:
+
+https://{organization}.sharepoint.com/sites/{site}/\_layouts/15/appprincipals.aspx
+
 ### Disabled by default
 
 In new subscriptions you could be needed to enable Grant App Permission. Connect to SharePoint using Windows PowerShell and then run:&#x20;
