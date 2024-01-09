@@ -5,7 +5,7 @@ description: AddIn Only authentication
 # AddIn Only
 
 {% hint style="danger" %}
-SharePoint Add-Ins will stop working for new tenants as of November 1st, 2024 and they will stop working for existing tenants and will be fully retired as of April 2nd, 2026. This applies to all environments including Government Clouds and Department of Defense.This type of authentication uses AddIn Only policy and OAuth bearer tokens for authenticating HTTP requests. See [more](https://techcommunity.microsoft.com/t5/microsoft-sharepoint-blog/sharepoint-add-in-retirement-in-microsoft-365/ba-p/3982035).
+SharePoint Add-Ins will stop working for new tenants as of November 1st, 2024 and they will stop working for existing tenants and will be fully retired as of April 2nd, 2026. See [more](https://techcommunity.microsoft.com/t5/microsoft-sharepoint-blog/sharepoint-add-in-retirement-in-microsoft-365/ba-p/3982035).
 {% endhint %}
 
 ### Struct
