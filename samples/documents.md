@@ -124,7 +124,7 @@ if err != nil {
 file.Sync()
 ```
 
-For a large files it's better getting file reader thought:
+For a large files it's better getting file reader through:
 
 ```go
 fileRelativeURL := "MyLibrary/Folder01/File01.txt"
