@@ -10,17 +10,17 @@ Auth strategy should be selected corresponding to your SharePoint environment an
 
 Import path `strategy "github.com/koltyakov/gosip/auth/{strategy}"`. Where `/{strategy}` stands for a strategy auth package.
 
-| `/azurecert`  | ✅ | ❌ | [sample](strategies/azure-certificate-auth.md#json)                                                                                                                                          |
-| ------------- | - | - | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/azurecreds` | ✅ | ❌ | [sample](strategies/azure-creds-auth.md#json)                                                                                                                                                |
-| `/azureenv`   | ✅ | ❌ | [sample](strategies/azure-environment-auth.md)                                                                                                                                               |
-| `/device`     | ✅ | ❌ | [sample](strategies/azure-device-flow.md#auth-configuration-and-usage)                                                                                                                       |
-| `/saml`       | ✅ | ❌ | [sample](strategies/addin/#json)                                                                                                                                                             |
-| `/addin`      | ✅ | ❌ | [sample](strategies/addin/#json)                                                                                                                                                             |
-| `/ntlm`       | ❌ | ✅ | [sample](strategies/ntlm.md#json)                                                                                                                                                            |
-| `/adfs`       | ✅ | ✅ | [spo](strategies/adfs.md#sharepoint-online-configuration), [on-prem](strategies/adfs.md#on-premises-configuration), [on-prem (wap)](strategies/adfs.md#on-premises-behing-wap-configuration) |
-| `/fba`        | ❌ | ✅ | [sample](strategies/fba.md#json)                                                                                                                                                             |
-| `/tmg`        | ❌ | ✅ | [sample](strategies/tmg.md#json)                                                                                                                                                             |
+| `/azurecert`  | ✅              | ❌ | [sample](strategies/azure-certificate-auth.md#json)                                                                                                                                          |
+| ------------- | -------------- | - | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/azurecreds` | ✅              | ❌ | [sample](strategies/azure-creds-auth.md#json)                                                                                                                                                |
+| `/azureenv`   | ✅              | ❌ | [sample](strategies/azure-environment-auth.md)                                                                                                                                               |
+| `/device`     | ✅              | ❌ | [sample](strategies/azure-device-flow.md#auth-configuration-and-usage)                                                                                                                       |
+| `/addin`      | ✅              | ❌ | [sample](strategies/addin/#json)                                                                                                                                                             |
+| `/ntlm`       | ❌              | ✅ | [sample](strategies/ntlm.md#json)                                                                                                                                                            |
+| `/adfs`       | ✅              | ✅ | [spo](strategies/adfs.md#sharepoint-online-configuration), [on-prem](strategies/adfs.md#on-premises-configuration), [on-prem (wap)](strategies/adfs.md#on-premises-behing-wap-configuration) |
+| `/fba`        | ❌              | ✅ | [sample](strategies/fba.md#json)                                                                                                                                                             |
+| `/tmg`        | ❌              | ✅ | [sample](strategies/tmg.md#json)                                                                                                                                                             |
+| `/saml`       | ❌ (deprecated) | ❌ | [sample](strategies/addin/#json)                                                                                                                                                             |
 
 JSON and struct representations are different in terms of language notations. So credentials parameters names in `private.json` files and declared as structs initiators vary.
 

@@ -24,10 +24,6 @@ description: 🔐 SharePoint authentication strategies implemented in Gosip
 [azure-device-flow.md](azure-device-flow.md)
 {% endcontent-ref %}
 
-{% content-ref url="saml.md" %}
-[saml.md](saml.md)
-{% endcontent-ref %}
-
 {% content-ref url="addin/" %}
 [addin](addin/)
 {% endcontent-ref %}

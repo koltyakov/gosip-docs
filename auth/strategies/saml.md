@@ -2,7 +2,9 @@
 description: SharePoint Online user credentials authentication
 ---
 
-# SAML Auth
+# SAML Auth \[Deprecated]
+
+⚠️ **Microsoft retired this authentication mechanism**
 
 This authentication option uses Microsoft Online Security Token Service `https://login.microsoftonline.com/extSTS.srf` and SAML tokens in order to obtain authentication cookie.
 
@@ -62,4 +64,3 @@ func main() {
 	// use client in raw requests or bind it with Fluent API ...
 }
 ```
-
