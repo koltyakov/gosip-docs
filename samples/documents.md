@@ -24,7 +24,7 @@ list := sp.Web().GetList("MyLibrary")
 ### Getting folder object
 
 ```go
-foler := sp.Web().GetFolder("MyLibrary/Folder01")
+folder := sp.Web().GetFolder("MyLibrary/Folder01")
 ```
 
 ### Getting file object
@@ -37,7 +37,7 @@ file := sp.Web().GetFile("MyLibrary/Folder01/File01.txt")
 
 ```go
 // folderResp is a byte array read from response body with extra methods
-folderResp, err := foler.Folders().Add("New Folder Name")
+folderResp, err := folder.Folders().Add("New Folder Name")
 if err != nil {
 	log.Fatal(err)
 }
@@ -58,7 +58,7 @@ if _, err := sp.Web().GetFolder(folderRelativeURL).Delete(); err != nil {
 
 ```go
 // fileAddResp is a byte array read from response body with extra methods
-fileAddResp, err := foler.Files().
+fileAddResp, err := folder.Files().
 	Add("My File.txt", []byte("File content"), true)
 
 if err != nil {
@@ -76,7 +76,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-fileAddResp, err := foler.Files().Add("My File.txt", content, true)
+fileAddResp, err := folder.Files().Add("My File.txt", content, true)
 if err != nil {
 	log.Fatal(err)
 }
@@ -91,7 +91,7 @@ if err != nil {
 }
 defer file.Close()
 
-fileAddResp, err := foler.Files().AddChunked("My File.zip", file, nil)
+fileAddResp, err := folder.Files().AddChunked("My File.zip", file, nil)
 if err != nil {
 	log.Fatal(err)
 }
